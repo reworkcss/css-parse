@@ -6,7 +6,7 @@
         "declarations": [
           {
             "property": "bar",
-            "value": "baz"
+            "value": "'baz'"
           }
         ]
       }
