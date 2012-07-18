@@ -2,15 +2,20 @@
   "stylesheet": {
     "rules": [
       {
-        "selector": "foo",
+        "selector": "tobi",
         "declarations": [
           {
-            "property": "bar",
-            "value": "'baz'"
-          },
+            "property": "name",
+            "value": "'tobi'"
+          }
+        ]
+      },
+      {
+        "selector": "loki",
+        "declarations": [
           {
-            "property": "raz",
-            "value": "'jaz'"
+            "property": "name",
+            "value": "'loki'"
           }
         ]
       }
