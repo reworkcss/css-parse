@@ -6,6 +6,11 @@
 var debug = require('debug')('css-parse');
 
 module.exports = function(css){
+
+  /**
+   * Parse stylesheet.
+   */
+
   function stylesheet() {
     var rules = [];
     var node;
@@ -15,6 +20,10 @@ module.exports = function(css){
     return { stylesheet: { rules: rules }};
   }
 
+  /**
+   * Match `re` and return captures.
+   */
+
   function match(re) {
     var m = re.exec(css);
     if (!m) return;
@@ -22,11 +31,19 @@ module.exports = function(css){
     return m;
   }
 
+  /**
+   * Parse selector.
+   */
+
   function selector() {
     var m = match(/^([^{]+)/);
     if (!m) return;
     return m[0].trim();
   }
+
+  /**
+   * Parse declaration.
+   */
 
   function declaration() {
     // prop
@@ -47,6 +64,10 @@ module.exports = function(css){
 
     return { property: prop, value: val };
   }
+
+  /**
+   * Parse rule.
+   */
 
   function rule() {
     var node = { selector: selector(), declarations: [] };
