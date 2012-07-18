@@ -1,0 +1,19 @@
+{
+  "stylesheet": {
+    "rules": [
+      {
+        "selector": "tobi loki jane",
+        "declarations": [
+          {
+            "property": "are",
+            "value": "'all'"
+          },
+          {
+            "property": "the-species",
+            "value": "called \"ferrets\""
+          }
+        ]
+      }
+    ]
+  }
+}
