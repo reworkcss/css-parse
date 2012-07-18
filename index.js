@@ -14,7 +14,9 @@ module.exports = function(css){
   function stylesheet() {
     var rules = [];
     var node;
+    comments();
     while (node = rule()) {
+      comments();
       rules.push(node);
     }
     return { stylesheet: { rules: rules }};
@@ -29,6 +31,37 @@ module.exports = function(css){
     if (!m) return;
     css = css.slice(m[0].length);
     return m;
+  }
+
+  /**
+   * Parse whitespace.
+   */
+
+  function whitespace() {
+    match(/^\s*/);
+  }
+
+  /**
+   * Parse comments;
+   */
+
+  function comments() {
+    while (comment()) ;
+  }
+
+  /**
+   * Parse comment.
+   */
+
+  function comment() {
+    if ('/' == css[0] && '*' == css[1]) {
+      var i = 2;
+      while ('*' != css[i] && '/' != css[i + 1]) ++i;
+      i += 2;
+      css = css.slice(i);
+      whitespace();
+      return true;
+    }
   }
 
   /**
@@ -71,12 +104,23 @@ module.exports = function(css){
 
   function rule() {
     var node = { selector: selector(), declarations: [] };
+
+    // selector
     if (!node.selector) return;
+    comments();
+
+    // {
     if (!match(/^{\s+/)) return;
+    comments();
+
+    // declarations
     var decl;
     while (decl = declaration()) {
       node.declarations.push(decl);
+      comments();
     }
+
+    // }
     if (!match(/^}\s*/)) return;
     return node;
   }

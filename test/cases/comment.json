@@ -1,0 +1,15 @@
+{
+  "stylesheet": {
+    "rules": [
+      {
+        "selector": "foo",
+        "declarations": [
+          {
+            "property": "bar",
+            "value": "baz"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+/* foo */
+   /* bar */   
+   /* baz
+
+asdfasdfasdf
+asdfasdfasdf
+asdfasdfasdf
+asdfasdfasdf
+
+*/
+
+foo { /* hey */
+  /**/ bar: baz; /* hey */ /* hey */
+}
