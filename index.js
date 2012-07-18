@@ -80,20 +80,20 @@ module.exports = function(css){
 
   function declaration() {
     // prop
-    var prop = match(/^([-\w]+) */);
+    var prop = match(/^([-\w]+)\s*/);
     if (!prop) return;
     prop = prop[0];
 
     // :
-    if (!match(/^:/)) return;
+    if (!match(/^:\s*/)) return;
 
     // val
-    var val = match(/^([^};]+)/);
+    var val = match(/^([^};]+)\s*/);
     if (!val) return;
     val = val[0].trim();
 
     // ;
-    match(/^;\s+/);
+    match(/^;\s*/);
 
     return { property: prop, value: val };
   }
@@ -110,7 +110,7 @@ module.exports = function(css){
     comments();
 
     // {
-    if (!match(/^{\s+/)) return;
+    if (!match(/^{\s*/)) return;
     comments();
 
     // declarations

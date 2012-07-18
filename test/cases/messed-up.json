@@ -1,0 +1,41 @@
+{
+  "stylesheet": {
+    "rules": [
+      {
+        "selector": "body",
+        "declarations": [
+          {
+            "property": "foo\n  ",
+            "value": "'bar'"
+          }
+        ]
+      },
+      {
+        "selector": "body",
+        "declarations": [
+          {
+            "property": "foo",
+            "value": "bar"
+          },
+          {
+            "property": "bar",
+            "value": "baz"
+          }
+        ]
+      },
+      {
+        "selector": "body",
+        "declarations": [
+          {
+            "property": "foo\n     ",
+            "value": "bar"
+          },
+          {
+            "property": "bar\n     ",
+            "value": "baz"
+          }
+        ]
+      }
+    ]
+  }
+}
