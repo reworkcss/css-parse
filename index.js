@@ -12,15 +12,23 @@ module.exports = function(css){
    */
 
   function stylesheet() {
-    var rules = [];
+    return { stylesheet: { rules: rules() }};
+  }
+
+  /**
+   * Parse ruleset.
+   */
+
+  function rules() {
     var node;
+    var rules = [];
     whitespace();
     comments();
-    while (node = atrule() || rule()) {
+    while (css[0] != '}' && (node = atrule() || rule())) {
       comments();
       rules.push(node);
     }
-    return { stylesheet: { rules: rules }};
+    return rules;
   }
 
   /**
@@ -156,6 +164,37 @@ module.exports = function(css){
   }
 
   /**
+   * Parse media.
+   */
+
+  function media() {
+    var m = match(/^@media *([^{]+)/);
+    if (!m) return;
+    var media = m[1].trim();
+
+    // {
+    if (!match(/^{\s*/)) return;
+    comments();
+
+    var style = rules();
+
+    // }
+    if (!match(/^}\s*/)) return;
+
+    return { media: media, rules: style };
+  }
+
+  /**
+   * Parse import
+   */
+
+  function atimport() {
+    var m = match(/^@import *([^;\n]+);\s*/);
+    if (!m) return;
+    return { import: m[1].trim() };
+  }
+
+  /**
    * Parse declarations.
    */
 
@@ -179,21 +218,12 @@ module.exports = function(css){
   }
 
   /**
-   * Parse import
-   */
-
-  function atimport() {
-    var m = match(/^@import *([^;\n]+);\s*/);
-    if (!m) return;
-    return { import: m[1].trim() };
-  }
-
-  /**
    * Parse at rule.
    */
    
   function atrule() {
     return keyframes()
+      || media()
       || atimport();
   }
 
