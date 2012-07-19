@@ -242,14 +242,10 @@ module.exports = function(css){
    */
   
   function rule() {
-    var node = { selector: selector() };
-  
-    // selector
-    if (!node.selector) return;
+    var sel = selector();
+    if (!sel) return;
     comments();
-  
-    node.declarations = declarations();
-    return node;
+    return { selector: sel, declarations: declarations() };
   }
   
   return stylesheet();
