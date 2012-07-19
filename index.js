@@ -16,6 +16,22 @@ module.exports = function(css){
   }
 
   /**
+   * Opening brace.
+   */
+
+  function open() {
+    return match(/^{\s*/);
+  }
+
+  /**
+   * Closing brace.
+   */
+
+  function close() {
+    return match(/^}\s*/);
+  }
+
+  /**
    * Parse ruleset.
    */
 
@@ -143,7 +159,7 @@ module.exports = function(css){
     var name = m[1];
 
     // {
-    if (!match(/^{\s*/)) return;
+    if (!open()) return;
     comments();
 
     var frame;
@@ -153,8 +169,7 @@ module.exports = function(css){
       comments();
     }
 
-    // }
-    if (!match(/^}\s*/)) return;
+    if (!close()) return;
 
     return {
       name: name,
@@ -201,8 +216,7 @@ module.exports = function(css){
   function declarations() {
     var decls = [];
 
-    // {
-    if (!match(/^{\s*/)) return;
+    if (!open()) return;
     comments();
   
     // declarations
@@ -212,8 +226,7 @@ module.exports = function(css){
       comments();
     }
   
-    // }
-    if (!match(/^}\s*/)) return;
+    if (!close()) return;
     return decls;
   }
 
