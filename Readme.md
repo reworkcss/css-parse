@@ -1,7 +1,36 @@
 
 # css-parse
 
-  CSS parser
+  CSS parser.
+
+## Example
+
+js:
+
+```js
+var parse = require('css-parse')
+parse('tobi { name: "tobi" }')
+```
+
+object returned:
+
+```json
+{
+  "stylesheet": {
+    "rules": [
+      {
+        "selector": "tobi",
+        "declarations": [
+          {
+            "property": "name",
+            "value": "tobi"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
 ## License 
 
