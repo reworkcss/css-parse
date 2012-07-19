@@ -185,7 +185,7 @@ module.exports = function(css){
   function atimport() {
     var m = match(/^@import *([^;\n]+);\s*/);
     if (!m) return;
-    return { import: m[1] };
+    return { import: m[1].trim() };
   }
 
   /**
