@@ -158,7 +158,6 @@ module.exports = function(css){
     if (!m) return;
     var name = m[1];
 
-    // {
     if (!open()) return;
     comments();
 
@@ -187,14 +186,12 @@ module.exports = function(css){
     if (!m) return;
     var media = m[1].trim();
 
-    // {
-    if (!match(/^{\s*/)) return;
+    if (!open()) return;
     comments();
 
     var style = rules();
 
-    // }
-    if (!match(/^}\s*/)) return;
+    if (!close()) return;
 
     return { media: media, rules: style };
   }
