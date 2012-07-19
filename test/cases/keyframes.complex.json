@@ -1,0 +1,65 @@
+{
+  "stylesheet": {
+    "rules": [
+      {
+        "name": "foo",
+        "keyframes": [
+          {
+            "values": [
+              "0%"
+            ],
+            "declarations": [
+              {
+                "property": "top",
+                "value": "0"
+              },
+              {
+                "property": "left",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "values": [
+              "30%"
+            ],
+            "declarations": [
+              {
+                "property": "top",
+                "value": "50px"
+              }
+            ]
+          },
+          {
+            "values": [
+              "68%",
+              "72%",
+              "85%"
+            ],
+            "declarations": [
+              {
+                "property": "left",
+                "value": "50px"
+              }
+            ]
+          },
+          {
+            "values": [
+              "100%"
+            ],
+            "declarations": [
+              {
+                "property": "top",
+                "value": "100px"
+              },
+              {
+                "property": "left",
+                "value": "100%"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

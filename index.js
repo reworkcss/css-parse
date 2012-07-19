@@ -15,7 +15,7 @@ module.exports = function(css){
     var rules = [];
     var node;
     comments();
-    while (node = rule()) {
+    while (node = atrule() || rule()) {
       comments();
       rules.push(node);
     }
@@ -99,31 +99,106 @@ module.exports = function(css){
   }
 
   /**
-   * Parse rule.
+   * Parse keyframe.
    */
 
-  function rule() {
-    var node = { selector: selector(), declarations: [] };
+  function keyframe() {
+    var m;
+    var vals = [];
 
-    // selector
-    if (!node.selector) return;
-    comments();
+    while (m = match(/^(from|to|\d+%)\s*/)) {
+      vals.push(m[1]);
+      match(/^,\s*/);
+    }
+
+    if (!vals.length) return;
+
+    return {
+      values: vals,
+      declarations: declarations()
+    };
+  }
+
+  /**
+   * Parse keyframes.
+   */
+
+  function keyframes() {
+    var m = match(/^@([-\w]+)?keyframes */);
+    if (!m) return;
+    var vendor = m[1];
+
+    // identifier
+    var m = match(/^([-\w]+)\s+/);
+    if (!m) return;
+    var name = m[1];
 
     // {
     if (!match(/^{\s*/)) return;
     comments();
 
-    // declarations
-    var decl;
-    while (decl = declaration()) {
-      node.declarations.push(decl);
+    var frame;
+    var frames = [];
+    while (frame = keyframe()) {
+      frames.push(frame);
       comments();
     }
 
     // }
     if (!match(/^}\s*/)) return;
-    return node;
+
+    return {
+      name: name,
+      vendor: vendor,
+      keyframes: frames
+    };
   }
 
+  /**
+   * Parse declarations.
+   */
+
+  function declarations() {
+    var decls = [];
+
+    // {
+    if (!match(/^{\s*/)) return;
+    comments();
+  
+    // declarations
+    var decl;
+    while (decl = declaration()) {
+      decls.push(decl);
+      comments();
+    }
+  
+    // }
+    if (!match(/^}\s*/)) return;
+    return decls;
+  }
+
+ /**
+  * Parse at rule.
+  */
+  
+  function atrule() {
+    return keyframes();
+  }
+
+  /**
+   * Parse rule.
+   */
+  
+  function rule() {
+    var node = { selector: selector() };
+  
+    // selector
+    if (!node.selector) return;
+    comments();
+  
+    node.declarations = declarations();
+    return node;
+  }
+  
   return stylesheet();
 };

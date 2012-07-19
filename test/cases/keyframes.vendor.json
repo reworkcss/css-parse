@@ -1,0 +1,34 @@
+{
+  "stylesheet": {
+    "rules": [
+      {
+        "name": "fade",
+        "vendor": "-webkit-",
+        "keyframes": [
+          {
+            "values": [
+              "from"
+            ],
+            "declarations": [
+              {
+                "property": "opacity",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "values": [
+              "to"
+            ],
+            "declarations": [
+              {
+                "property": "opacity",
+                "value": "1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
