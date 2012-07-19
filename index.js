@@ -14,6 +14,7 @@ module.exports = function(css){
   function stylesheet() {
     var rules = [];
     var node;
+    whitespace();
     comments();
     while (node = atrule() || rule()) {
       comments();
@@ -177,12 +178,23 @@ module.exports = function(css){
     return decls;
   }
 
- /**
-  * Parse at rule.
-  */
-  
+  /**
+   * Parse import
+   */
+
+  function atimport() {
+    var m = match(/^@import *([^;\n]+);\s*/);
+    if (!m) return;
+    return { import: m[1] };
+  }
+
+  /**
+   * Parse at rule.
+   */
+   
   function atrule() {
-    return keyframes();
+    return keyframes()
+      || atimport();
   }
 
   /**
