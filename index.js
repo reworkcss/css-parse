@@ -96,7 +96,7 @@ module.exports = function(css){
   function selector() {
     var m = match(/^([^{]+)/);
     if (!m) return;
-    return m[0].trim();
+    return m[0].trim().split(/\s*,\s*/);
   }
 
   /**
@@ -245,7 +245,7 @@ module.exports = function(css){
     var sel = selector();
     if (!sel) return;
     comments();
-    return { selector: sel, declarations: declarations() };
+    return { selectors: sel, declarations: declarations() };
   }
   
   return stylesheet();

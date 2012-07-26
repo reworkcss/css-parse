@@ -2,7 +2,9 @@
   "stylesheet": {
     "rules": [
       {
-        "selector": "foo",
+        "selectors": [
+          "foo"
+        ],
         "declarations": [
           {
             "property": "bar",

@@ -2,7 +2,9 @@
   "stylesheet": {
     "rules": [
       {
-        "selector": "tobi",
+        "selectors": [
+          "tobi"
+        ],
         "declarations": [
           {
             "property": "name",
@@ -11,7 +13,9 @@
         ]
       },
       {
-        "selector": "loki",
+        "selectors": [
+          "loki"
+        ],
         "declarations": [
           {
             "property": "name",

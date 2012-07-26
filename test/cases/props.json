@@ -2,7 +2,9 @@
   "stylesheet": {
     "rules": [
       {
-        "selector": "tobi loki jane",
+        "selectors": [
+          "tobi loki jane"
+        ],
         "declarations": [
           {
             "property": "are",

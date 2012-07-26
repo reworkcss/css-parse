@@ -19,7 +19,7 @@ object returned:
   "stylesheet": {
     "rules": [
       {
-        "selector": "tobi",
+        "selectors": ["tobi"],
         "declarations": [
           {
             "property": "name",

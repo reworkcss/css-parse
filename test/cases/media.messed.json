@@ -5,7 +5,9 @@
         "media": "screen, projection",
         "rules": [
           {
-            "selector": "html",
+            "selectors": [
+              "html"
+            ],
             "declarations": [
               {
                 "property": "background",
@@ -18,7 +20,9 @@
             ]
           },
           {
-            "selector": "body",
+            "selectors": [
+              "body"
+            ],
             "declarations": [
               {
                 "property": "max-width",
@@ -36,7 +40,9 @@
         "media": "print",
         "rules": [
           {
-            "selector": "html",
+            "selectors": [
+              "html"
+            ],
             "declarations": [
               {
                 "property": "background",
@@ -49,7 +55,9 @@
             ]
           },
           {
-            "selector": "body",
+            "selectors": [
+              "body"
+            ],
             "declarations": [
               {
                 "property": "padding",

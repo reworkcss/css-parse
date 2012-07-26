@@ -2,7 +2,9 @@
   "stylesheet": {
     "rules": [
       {
-        "selector": "body",
+        "selectors": [
+          "body"
+        ],
         "declarations": [
           {
             "property": "foo\n  ",
@@ -11,7 +13,9 @@
         ]
       },
       {
-        "selector": "body",
+        "selectors": [
+          "body"
+        ],
         "declarations": [
           {
             "property": "foo",
@@ -24,7 +28,9 @@
         ]
       },
       {
-        "selector": "body",
+        "selectors": [
+          "body"
+        ],
         "declarations": [
           {
             "property": "foo\n     ",
