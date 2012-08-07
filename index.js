@@ -200,10 +200,13 @@ module.exports = function(css){
    * Parse import
    */
 
-  function atimport() {
-    var m = match(/^@import *([^;\n]+);\s*/);
+  function atruleSimple(ruleName) {
+    var re = new RegExp('^@'+ruleName+' *([^;\\n]+);\\s*');
+    var m = match(re);
     if (!m) return;
-    return { import: m[1].trim() };
+    var ret = {}
+    ret[ruleName] = m[1].trim();
+    return ret;
   }
 
   /**
@@ -234,7 +237,8 @@ module.exports = function(css){
   function atrule() {
     return keyframes()
       || media()
-      || atimport();
+      || atruleSimple('import')
+      || atruleSimple('charset')
   }
 
   /**
