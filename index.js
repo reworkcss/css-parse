@@ -153,7 +153,7 @@ module.exports = function(css){
     var vendor = m[1];
 
     // identifier
-    var m = match(/^([-\w]+)\s+/);
+    var m = match(/^([-\w]+)\s*/);
     if (!m) return;
     var name = m[1];
 
