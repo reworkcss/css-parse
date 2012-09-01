@@ -200,7 +200,7 @@ module.exports = function(css){
    */
 
   function atimport() {
-    return _atruleSimple('import')
+    return _atrule('import')
   }
 
   /**
@@ -208,19 +208,18 @@ module.exports = function(css){
    */
 
   function atcharset() {
-    return _atruleSimple('charset');
+    return _atrule('charset');
   }
 
   /**
    * Parse non-block at-rules
    */
 
-  function _atruleSimple(ruleName) {
-    var m = match(new RegExp('^@'+ruleName+' *([^;\\n]+);\\s*'));
+  function _atrule(name) {
+    var m = match(new RegExp('^@' + name + ' *([^;\\n]+);\\s*'));
     if (!m) return;
-
     var ret = {}
-    ret[ruleName] = m[1].trim();
+    ret[name] = m[1].trim();
     return ret;
   }
 
