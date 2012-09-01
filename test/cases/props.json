@@ -13,6 +13,10 @@
           {
             "property": "the-species",
             "value": "called \"ferrets\""
+          },
+          {
+            "property": "*even",
+            "value": "'ie crap'"
           }
         ]
       }
