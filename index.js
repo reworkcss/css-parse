@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -105,7 +104,7 @@ module.exports = function(css){
 
   function declaration() {
     // prop
-    var prop = match(/^([-\w]+)\s*/);
+    var prop = match(/^(\*?[-\w]+)\s*/);
     if (!prop) return;
     prop = prop[0];
 
