@@ -117,7 +117,7 @@ module.exports = function(css){
     val = val[0].trim();
 
     // ;
-    match(/^;\s*/);
+    match(/^[;\s]*/);
 
     return { property: prop, value: val };
   }
