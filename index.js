@@ -1,8 +1,3 @@
-/**
- * Module dependencies.
- */
-
-var debug = require('debug')('css-parse');
 
 module.exports = function(css){
 
