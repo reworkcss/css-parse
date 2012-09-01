@@ -32,6 +32,10 @@ object returned:
 }
 ```
 
+## Performance
+
+  Parsed 15,000 lines of CSS (2mb) in 40ms on my macbook air.
+
 ## License 
 
 (The MIT License)
