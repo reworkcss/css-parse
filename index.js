@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -113,7 +112,7 @@ module.exports = function(css){
     if (!match(/^:\s*/)) return;
 
     // val
-    var val = match(/^([^};]+)\s*/);
+    var val = match(/^((?:'[^']*'|"[^"]*"|[^};])+)\s*/);
     if (!val) return;
     val = val[0].trim();
 
