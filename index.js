@@ -200,9 +200,28 @@ module.exports = function(css){
    */
 
   function atimport() {
-    var m = match(/^@import *([^;\n]+);\s*/);
+    return _atruleSimple('import')
+  }
+
+  /**
+   * Parse charset
+   */
+
+  function atcharset() {
+    return _atruleSimple('charset');
+  }
+
+  /**
+   * Parse non-block at-rules
+   */
+
+  function _atruleSimple(ruleName) {
+    var m = match(new RegExp('^@'+ruleName+' *([^;\\n]+);\\s*'));
     if (!m) return;
-    return { import: m[1].trim() };
+
+    var ret = {}
+    ret[ruleName] = m[1].trim();
+    return ret;
   }
 
   /**
@@ -233,7 +252,8 @@ module.exports = function(css){
   function atrule() {
     return keyframes()
       || media()
-      || atimport();
+      || atimport()
+      || atcharset();
   }
 
   /**
