@@ -1,4 +1,10 @@
 
+1.0.2 / 2012-09-01 
+==================
+
+  * fix IE property hack support [rstacruz]
+  * fix quoted strings in declarations [rstacruz]
+
 1.0.1 / 2012-07-26 
 ==================
 
