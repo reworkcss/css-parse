@@ -75,7 +75,7 @@ module.exports = function(css){
   function comment() {
     if ('/' == css[0] && '*' == css[1]) {
       var i = 2;
-      while ('*' != css[i] && '/' != css[i + 1]) ++i;
+      while ('*' != css[i] || '/' != css[i + 1]) ++i;
       i += 2;
       css = css.slice(i);
       whitespace();
