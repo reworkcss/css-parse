@@ -1,0 +1,5 @@
+/* http://foo.com/bar/baz.html */
+
+foo { /*/*/
+  bar: baz; /* http://foo.com/bar/baz.html */
+}
