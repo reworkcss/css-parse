@@ -1,4 +1,10 @@
 
+1.0.4 / 2012-09-17 
+==================
+
+  * fix keyframes float percentages
+  * fix an issue with comments containing slashes.
+
 1.0.3 / 2012-09-01 
 ==================
 
