@@ -125,7 +125,7 @@ module.exports = function(css){
     var m;
     var vals = [];
 
-    while (m = match(/^(from|to|\d+%)\s*/)) {
+    while (m = match(/^(from|to|\d+%|\.\d+%|\d+\.\d+%)\s*/)) {
       vals.push(m[1]);
       match(/^,\s*/);
     }
