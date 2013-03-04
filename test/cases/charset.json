@@ -5,7 +5,13 @@
         "charset": "\"UTF-8\""
       },
       {
+        "comment": " Set the encoding of the style sheet to Unicode UTF-8"
+      },
+      {
         "charset": "'iso-8859-15'"
+      },
+      {
+        "comment": " Set the encoding of the style sheet to Latin-9 (Western European languages, with euro sign) "
       }
     ]
   }

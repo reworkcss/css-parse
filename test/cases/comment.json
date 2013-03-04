@@ -2,6 +2,15 @@
   "stylesheet": {
     "rules": [
       {
+        "comment": " foo "
+      },
+      {
+        "comment": " bar "
+      },
+      {
+        "comment": " baz\n\nasdfasdfasdf\nasdfasdfasdf\nasdfasdfasdf\nasdfasdfasdf\n\n"
+      },
+      {
         "selectors": [
           "foo"
         ],
