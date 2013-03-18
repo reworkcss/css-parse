@@ -83,7 +83,7 @@ module.exports = function(css){
       var comment = css.slice(2, i - 2);
       css = css.slice(i);
       whitespace();
-      return {comment: comment};
+      return { comment: comment };
     }
   }
 
@@ -231,14 +231,14 @@ module.exports = function(css){
 
     if (!open()) return;
     comments();
-  
+
     // declarations
     var decl;
     while (decl = declaration()) {
       decls.push(decl);
       comments();
     }
-  
+
     if (!close()) return;
     return decls;
   }
@@ -246,7 +246,7 @@ module.exports = function(css){
   /**
    * Parse at rule.
    */
-   
+
   function atrule() {
     return keyframes()
       || media()
@@ -257,13 +257,13 @@ module.exports = function(css){
   /**
    * Parse rule.
    */
-  
+
   function rule() {
     var sel = selector();
     if (!sel) return;
     comments();
     return { selectors: sel, declarations: declarations() };
   }
-  
+
   return stylesheet();
 };
