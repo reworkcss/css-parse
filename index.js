@@ -33,10 +33,10 @@ module.exports = function(css){
     var node;
     var rules = [];
     whitespace();
-    comments();
+    comments(rules);
     while (css[0] != '}' && (node = atrule() || rule())) {
-      comments();
       rules.push(node);
+      comments(rules);
     }
     return rules;
   }
@@ -64,8 +64,11 @@ module.exports = function(css){
    * Parse comments;
    */
 
-  function comments() {
-    while (comment()) ;
+  function comments(rules) {
+    rules = rules || [];
+    var c;
+    while (c = comment()) rules.push(c);
+    return rules;
   }
 
   /**
@@ -77,9 +80,10 @@ module.exports = function(css){
       var i = 2;
       while ('*' != css[i] || '/' != css[i + 1]) ++i;
       i += 2;
+      var comment = css.slice(2, i - 2);
       css = css.slice(i);
       whitespace();
-      return true;
+      return {comment: comment};
     }
   }
 

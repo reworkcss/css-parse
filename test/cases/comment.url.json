@@ -2,6 +2,9 @@
   "stylesheet": {
     "rules": [
       {
+        "comment": " http://foo.com/bar/baz.html "
+      },
+      {
         "selectors": [
           "foo"
         ],
