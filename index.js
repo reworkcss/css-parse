@@ -176,6 +176,25 @@ module.exports = function(css){
   }
 
   /**
+   * Parse supports.
+   */
+
+  function supports() {
+    var m = match(/^@supports *([^{]+)/);
+    if (!m) return;
+    var supports = m[1].trim();
+
+    if (!open()) return;
+    comments();
+
+    var style = rules();
+
+    if (!close()) return;
+
+    return { supports: supports, rules: style };
+  }
+
+  /**
    * Parse media.
    */
 
@@ -250,6 +269,7 @@ module.exports = function(css){
   function atrule() {
     return keyframes()
       || media()
+      || supports()
       || atimport()
       || atcharset();
   }
