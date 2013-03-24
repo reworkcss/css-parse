@@ -194,6 +194,7 @@ module.exports = function(css){
     return { media: media, rules: style };
   }
 
+
   /**
    * Parse import
    */
@@ -208,6 +209,14 @@ module.exports = function(css){
 
   function atcharset() {
     return _atrule('charset');
+  }
+
+  /**
+   * Parse namespace
+   */
+
+  function atnamespace() {
+    return _atrule('namespace')
   }
 
   /**
@@ -251,7 +260,9 @@ module.exports = function(css){
     return keyframes()
       || media()
       || atimport()
-      || atcharset();
+      || atcharset()
+      || atnamespace();
+
   }
 
   /**
