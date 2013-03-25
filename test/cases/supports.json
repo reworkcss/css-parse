@@ -1,0 +1,26 @@
+{
+  "stylesheet": {
+    "rules": [
+      {
+        "supports": "(display: flex) or (display: box)",
+        "rules": [
+          {
+            "selectors": [
+              ".flex"
+            ],
+            "declarations": [
+              {
+                "property": "display",
+                "value": "box"
+              },
+              {
+                "property": "display",
+                "value": "flex"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
