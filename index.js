@@ -213,6 +213,50 @@ module.exports = function(css){
     return { media: media, rules: style };
   }
 
+  /**
+   * Parse paged media.
+   */
+
+  function atpage() {
+    var m = match(/^@page */);
+    if (!m) return;
+
+    var sel = selector() || [];
+    var decls = [];
+
+    if (!open()) return;
+    comments();
+
+    // declarations
+    var decl;
+    while (decl = declaration() || atmargin()) {
+      decls.push(decl);
+      comments();
+    }
+
+    if (!close()) return;
+
+    return {
+      type: "page",
+      selectors: sel,
+      declarations: decls
+    };
+  }
+
+  /**
+   * Parse margin at-rules
+   */
+
+  function atmargin() {
+    var m = match(/^@([a-z\-]+) */);
+    if (!m) return;
+    var type = m[1]
+
+    return {
+      type: type,
+      declarations: declarations()
+    }
+  }
 
   /**
    * Parse import
@@ -281,8 +325,8 @@ module.exports = function(css){
       || supports()
       || atimport()
       || atcharset()
-      || atnamespace();
-
+      || atnamespace()
+      || atpage();
   }
 
   /**

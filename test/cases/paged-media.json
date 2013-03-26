@@ -1,0 +1,51 @@
+{
+  "stylesheet": {
+    "rules": [
+      {
+        "type": "page",
+        "selectors": [
+          "toc",
+          "index:blank"
+        ],
+        "declarations": [
+          {
+            "property": "color",
+            "value": "green"
+          },
+          {
+            "type": "top-left",
+            "declarations": [
+              {
+                "property": "content",
+                "value": "\"foo\""
+              },
+              {
+                "property": "color",
+                "value": "blue"
+              }
+            ]
+          },
+          {
+            "type": "top-right",
+            "declarations": [
+              {
+                "property": "content",
+                "value": "\"bar\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "page",
+        "selectors": [],
+        "declarations": [
+          {
+            "property": "font-size",
+            "value": "16pt"
+          }
+        ]
+      }
+    ]
+  }
+}
