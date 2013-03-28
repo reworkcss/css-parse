@@ -1,4 +1,11 @@
 
+1.2.0 / 2013-03-28 
+==================
+
+  * add support for @page at-rules with nested @margin at-rules.
+  * add @namespace support.
+  * add support for new @supports at-rule.
+
 1.1.0 / 2013-03-18 
 ==================
 
