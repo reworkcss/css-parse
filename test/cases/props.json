@@ -18,7 +18,11 @@
             "property": "*even",
             "value": "'ie crap'"
           }
-        ]
+        ],
+        "loc": {
+          "line": 2,
+          "column": 1
+        }
       }
     ]
   }

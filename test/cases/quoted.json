@@ -10,7 +10,11 @@
             "property": "background",
             "value": "url('some;stuff;here') 50% 50% no-repeat"
           }
-        ]
+        ],
+        "loc": {
+          "line": 1,
+          "column": 1
+        }
       }
     ]
   }

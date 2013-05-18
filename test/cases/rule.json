@@ -10,7 +10,11 @@
             "property": "bar",
             "value": "'baz'"
           }
-        ]
+        ],
+        "loc": {
+          "line": 1,
+          "column": 1
+        }
       }
     ]
   }

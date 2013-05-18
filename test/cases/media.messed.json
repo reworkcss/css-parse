@@ -17,7 +17,11 @@
                 "property": "color",
                 "value": "#300"
               }
-            ]
+            ],
+            "loc": {
+              "line": 1,
+              "column": 28
+            }
           },
           {
             "selectors": [
@@ -32,7 +36,11 @@
                 "property": "margin",
                 "value": "0 auto"
               }
-            ]
+            ],
+            "loc": {
+              "line": 7,
+              "column": 3
+            }
           }
         ]
       },
@@ -52,7 +60,11 @@
                 "property": "color",
                 "value": "#000"
               }
-            ]
+            ],
+            "loc": {
+              "line": 19,
+              "column": 15
+            }
           },
           {
             "selectors": [
@@ -67,7 +79,11 @@
                 "property": "border",
                 "value": "0.5pt solid #666"
               }
-            ]
+            ],
+            "loc": {
+              "line": 23,
+              "column": 15
+            }
           }
         ]
       }

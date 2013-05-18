@@ -1,5 +1,9 @@
 
-module.exports = function(css){
+module.exports = function(css, opts){
+
+  var line = 1
+    , column = 1
+    , location = opts && opts.loc;
 
   /**
    * Parse stylesheet.
@@ -48,8 +52,28 @@ module.exports = function(css){
   function match(re) {
     var m = re.exec(css);
     if (!m) return;
+
     css = css.slice(m[0].length);
+    updateLocation(m[0]);
     return m;
+  }
+
+  /**
+   * Update line and column number based on the passed `str`.
+   */
+
+  function updateLocation(str) {
+    if (!location) return;
+    var re = /\n/g
+      , i = 0
+      , newline;
+
+    while((newline = re.exec(str))) {
+      line++;
+      column = 0;
+      i = newline.index;
+    }
+    column += str.length-i;
   }
 
   /**
@@ -81,6 +105,7 @@ module.exports = function(css){
       while ('*' != css[i] || '/' != css[i + 1]) ++i;
       i += 2;
       var comment = css.slice(2, i - 2);
+      updateLocation(comment);
       css = css.slice(i);
       whitespace();
       return { comment: comment };
@@ -334,10 +359,14 @@ module.exports = function(css){
    */
 
   function rule() {
-    var sel = selector();
+    var loc = location && { line: line, column: column }
+      , sel = selector();
+
     if (!sel) return;
     comments();
-    return { selectors: sel, declarations: declarations() };
+    var ret = { selectors: sel, declarations: declarations() };
+    if (loc) ret.loc = loc;
+    return ret;
   }
 
   return stylesheet();

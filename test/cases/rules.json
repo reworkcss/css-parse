@@ -10,7 +10,11 @@
             "property": "name",
             "value": "'tobi'"
           }
-        ]
+        ],
+        "loc": {
+          "line": 1,
+          "column": 1
+        }
       },
       {
         "selectors": [
@@ -21,7 +25,11 @@
             "property": "name",
             "value": "'loki'"
           }
-        ]
+        ],
+        "loc": {
+          "line": 4,
+          "column": 1
+        }
       }
     ]
   }
