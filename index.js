@@ -65,8 +65,8 @@ module.exports = function(css){
    */
 
   function comments(rules) {
-    rules = rules || [];
     var c;
+    rules = rules || [];
     while (c = comment()) rules.push(c);
     return rules;
   }
@@ -76,15 +76,14 @@ module.exports = function(css){
    */
 
   function comment() {
-    if ('/' == css[0] && '*' == css[1]) {
-      var i = 2;
-      while ('*' != css[i] || '/' != css[i + 1]) ++i;
-      i += 2;
-      var comment = css.slice(2, i - 2);
-      css = css.slice(i);
-      whitespace();
-      return { comment: comment };
-    }
+    if ('/' != css[0] || '*' != css[1]) return;
+    var i = 2;
+    while ('*' != css[i] || '/' != css[i + 1]) ++i;
+    i += 2;
+    var comment = css.slice(2, i - 2);
+    css = css.slice(i);
+    whitespace();
+    return { comment: comment };
   }
 
   /**
