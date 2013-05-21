@@ -1,4 +1,5 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
@@ -9,30 +10,9 @@
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "color",
             "value": "green"
-          },
-          {
-            "type": "top-left",
-            "declarations": [
-              {
-                "property": "content",
-                "value": "\"foo\""
-              },
-              {
-                "property": "color",
-                "value": "blue"
-              }
-            ]
-          },
-          {
-            "type": "top-right",
-            "declarations": [
-              {
-                "property": "content",
-                "value": "\"bar\""
-              }
-            ]
           }
         ]
       },
@@ -41,6 +21,7 @@
         "selectors": [],
         "declarations": [
           {
+            "type": "declaration",
             "property": "font-size",
             "value": "16pt"
           }

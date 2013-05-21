@@ -1,19 +1,24 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "supports",
         "supports": "(display: flex) or (display: box)",
         "rules": [
           {
+            "type": "rule",
             "selectors": [
               ".flex"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "display",
                 "value": "box"
               },
               {
+                "type": "declaration",
                 "property": "display",
                 "value": "flex"
               }

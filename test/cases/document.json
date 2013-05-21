@@ -1,16 +1,20 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "document",
         "document": "url-prefix()",
         "vendor": "-moz-",
         "rules": [
           {
+            "type": "rule",
             "selectors": [
               ".ui-select .ui-btn select"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "opacity",
                 "value": ".0001"
               }

@@ -6,7 +6,12 @@ module.exports = function(css){
    */
 
   function stylesheet() {
-    return { stylesheet: { rules: rules() }};
+    return {
+      type: 'stylesheet',
+      stylesheet: {
+        rules: rules()
+      }
+    };
   }
 
   /**
@@ -86,7 +91,10 @@ module.exports = function(css){
     css = css.slice(i);
     whitespace();
 
-    return { comment: str };
+    return {
+      type: 'comment',
+      comment: str
+    };
   }
 
   /**
@@ -120,7 +128,11 @@ module.exports = function(css){
     // ;
     match(/^[;\s]*/);
 
-    return { property: prop, value: val };
+    return {
+      type: 'declaration',
+      property: prop,
+      value: val
+    };
   }
 
   /**
@@ -139,6 +151,7 @@ module.exports = function(css){
     if (!vals.length) return;
 
     return {
+      type: 'keyframe',
       values: vals,
       declarations: declarations()
     };
@@ -171,6 +184,7 @@ module.exports = function(css){
     if (!close()) return;
 
     return {
+      type: 'keyframes',
       name: name,
       vendor: vendor,
       keyframes: frames
@@ -193,7 +207,11 @@ module.exports = function(css){
 
     if (!close()) return;
 
-    return { supports: supports, rules: style };
+    return {
+      type: 'supports',
+      supports: supports,
+      rules: style
+    };
   }
 
   /**
@@ -212,7 +230,11 @@ module.exports = function(css){
 
     if (!close()) return;
 
-    return { media: media, rules: style };
+    return {
+      type: 'media',
+      media: media,
+      rules: style
+    };
   }
 
   /**
@@ -231,7 +253,7 @@ module.exports = function(css){
 
     // declarations
     var decl;
-    while (decl = declaration() || atmargin()) {
+    while (decl = declaration()) {
       decls.push(decl);
       comments();
     }
@@ -239,7 +261,7 @@ module.exports = function(css){
     if (!close()) return;
 
     return {
-      type: "page",
+      type: 'page',
       selectors: sel,
       declarations: decls
     };
@@ -263,6 +285,7 @@ module.exports = function(css){
     if (!close()) return;
 
     return {
+      type: 'document',
       document: doc,
       vendor: vendor,
       rules: style
@@ -270,26 +293,11 @@ module.exports = function(css){
   }
 
   /**
-   * Parse margin at-rules
-   */
-
-  function atmargin() {
-    var m = match(/^@([a-z\-]+) */);
-    if (!m) return;
-    var type = m[1]
-
-    return {
-      type: type,
-      declarations: declarations()
-    }
-  }
-
-  /**
    * Parse import
    */
 
   function atimport() {
-    return _atrule('import')
+    return _atrule('import');
   }
 
   /**
@@ -315,7 +323,7 @@ module.exports = function(css){
   function _atrule(name) {
     var m = match(new RegExp('^@' + name + ' *([^;\\n]+);\\s*'));
     if (!m) return;
-    var ret = {}
+    var ret = { type: name };
     ret[name] = m[1].trim();
     return ret;
   }
@@ -364,7 +372,11 @@ module.exports = function(css){
     var sel = selector();
     if (!sel) return;
     comments();
-    return { selectors: sel, declarations: declarations() };
+    return {
+      type: 'rule',
+      selectors: sel,
+      declarations: declarations()
+    };
   }
 
   return stylesheet();

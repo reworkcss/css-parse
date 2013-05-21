@@ -1,36 +1,44 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "keyframes",
         "name": "foo",
         "keyframes": [
           {
+            "type": "keyframe",
             "values": [
               "0%"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "top",
                 "value": "0"
               },
               {
+                "type": "declaration",
                 "property": "left",
                 "value": "0"
               }
             ]
           },
           {
+            "type": "keyframe",
             "values": [
               "30.50%"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "top",
                 "value": "50px"
               }
             ]
           },
           {
+            "type": "keyframe",
             "values": [
               ".68%",
               "72%",
@@ -38,21 +46,25 @@
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "left",
                 "value": "50px"
               }
             ]
           },
           {
+            "type": "keyframe",
             "values": [
               "100%"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "top",
                 "value": "100px"
               },
               {
+                "type": "declaration",
                 "property": "left",
                 "value": "100%"
               }

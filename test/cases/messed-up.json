@@ -1,42 +1,51 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "rule",
         "selectors": [
           "body"
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "foo\n  ",
             "value": "'bar'"
           }
         ]
       },
       {
+        "type": "rule",
         "selectors": [
           "body"
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "foo",
             "value": "bar"
           },
           {
+            "type": "declaration",
             "property": "bar",
             "value": "baz"
           }
         ]
       },
       {
+        "type": "rule",
         "selectors": [
           "body"
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "foo\n     ",
             "value": "bar"
           },
           {
+            "type": "declaration",
             "property": "bar\n     ",
             "value": "baz"
           }

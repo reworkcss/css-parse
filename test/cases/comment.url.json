@@ -1,18 +1,23 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "comment",
         "comment": " http://foo.com/bar/baz.html "
       },
       {
+        "type": "comment",
         "comment": ""
       },
       {
+        "type": "rule",
         "selectors": [
           "foo"
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "bar",
             "value": "baz"
           }

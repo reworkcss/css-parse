@@ -1,21 +1,27 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "comment",
         "comment": " foo "
       },
       {
+        "type": "comment",
         "comment": " bar "
       },
       {
+        "type": "comment",
         "comment": " baz\n\nasdfasdfasdf\nasdfasdfasdf\nasdfasdfasdf\nasdfasdfasdf\n\n"
       },
       {
+        "type": "rule",
         "selectors": [
           "foo"
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "bar",
             "value": "baz"
           }

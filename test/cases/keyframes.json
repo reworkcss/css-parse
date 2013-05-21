@@ -1,26 +1,32 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "keyframes",
         "name": "fade",
         "keyframes": [
           {
+            "type": "keyframe",
             "values": [
               "from"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "opacity",
                 "value": "0"
               }
             ]
           },
           {
+            "type": "keyframe",
             "values": [
               "to"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "opacity",
                 "value": "1"
               }

@@ -1,19 +1,25 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "import",
         "import": "url(\"fineprint.css\") print"
       },
       {
+        "type": "import",
         "import": "url(\"bluish.css\") projection, tv"
       },
       {
+        "type": "import",
         "import": "'custom.css'"
       },
       {
+        "type": "import",
         "import": "\"common.css\" screen, projection"
       },
       {
+        "type": "import",
         "import": "url('landscape.css') screen and (orientation:landscape)"
       }
     ]

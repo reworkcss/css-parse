@@ -1,16 +1,21 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "charset",
         "charset": "\"UTF-8\""
       },
       {
+        "type": "comment",
         "comment": " Set the encoding of the style sheet to Unicode UTF-8"
       },
       {
+        "type": "charset",
         "charset": "'iso-8859-15'"
       },
       {
+        "type": "comment",
         "comment": " Set the encoding of the style sheet to Latin-9 (Western European languages, with euro sign) "
       }
     ]

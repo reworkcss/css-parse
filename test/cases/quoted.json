@@ -1,12 +1,15 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "rule",
         "selectors": [
           "body"
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "background",
             "value": "url('some;stuff;here') 50% 50% no-repeat"
           }

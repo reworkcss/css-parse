@@ -1,23 +1,28 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "rule",
         "selectors": [
           "tobi"
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "name",
             "value": "'tobi'"
           }
         ]
       },
       {
+        "type": "rule",
         "selectors": [
           "loki"
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "name",
             "value": "'loki'"
           }

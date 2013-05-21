@@ -1,34 +1,42 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "media",
         "media": "screen, projection",
         "rules": [
           {
+            "type": "rule",
             "selectors": [
               "html"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "background",
                 "value": "#fffef0"
               },
               {
+                "type": "declaration",
                 "property": "color",
                 "value": "#300"
               }
             ]
           },
           {
+            "type": "rule",
             "selectors": [
               "body"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "max-width",
                 "value": "35em"
               },
               {
+                "type": "declaration",
                 "property": "margin",
                 "value": "0 auto"
               }
@@ -37,33 +45,40 @@
         ]
       },
       {
+        "type": "media",
         "media": "print",
         "rules": [
           {
+            "type": "rule",
             "selectors": [
               "html"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "background",
                 "value": "#fff"
               },
               {
+                "type": "declaration",
                 "property": "color",
                 "value": "#000"
               }
             ]
           },
           {
+            "type": "rule",
             "selectors": [
               "body"
             ],
             "declarations": [
               {
+                "type": "declaration",
                 "property": "padding",
                 "value": "1in"
               },
               {
+                "type": "declaration",
                 "property": "border",
                 "value": "0.5pt solid #666"
               }

@@ -1,12 +1,15 @@
 {
+  "type": "stylesheet",
   "stylesheet": {
     "rules": [
       {
+        "type": "rule",
         "selectors": [
           "foo"
         ],
         "declarations": [
           {
+            "type": "declaration",
             "property": "bar",
             "value": "'baz'"
           }
