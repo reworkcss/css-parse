@@ -143,13 +143,13 @@ module.exports = function(css){
     var decls = [];
 
     if (!open()) return;
-    comments();
+    comments(decls);
 
     // declarations
     var decl;
     while (decl = declaration()) {
       decls.push(decl);
-      comments();
+      comments(decls);
     }
 
     if (!close()) return;

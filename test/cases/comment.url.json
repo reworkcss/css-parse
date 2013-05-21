@@ -17,9 +17,21 @@
         ],
         "declarations": [
           {
+            "type": "comment",
+            "comment": "/"
+          },
+          {
+            "type": "comment",
+            "comment": " something "
+          },
+          {
             "type": "declaration",
             "property": "bar",
             "value": "baz"
+          },
+          {
+            "type": "comment",
+            "comment": " http://foo.com/bar/baz.html "
           }
         ]
       }

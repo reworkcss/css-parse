@@ -4,28 +4,44 @@
     "rules": [
       {
         "type": "comment",
-        "comment": " foo "
-      },
-      {
-        "type": "comment",
-        "comment": " bar "
-      },
-      {
-        "type": "comment",
-        "comment": " baz\n\nasdfasdfasdf\nasdfasdfasdf\nasdfasdfasdf\nasdfasdfasdf\n\n"
+        "comment": " 1 "
       },
       {
         "type": "rule",
         "selectors": [
-          "foo"
+          "body"
         ],
         "declarations": [
           {
+            "type": "comment",
+            "comment": " 2 "
+          },
+          {
+            "type": "comment",
+            "comment": " 3 "
+          },
+          {
+            "type": "comment",
+            "comment": ""
+          },
+          {
             "type": "declaration",
-            "property": "bar",
-            "value": "baz"
+            "property": "foo",
+            "value": "'bar'"
+          },
+          {
+            "type": "comment",
+            "comment": " 4 "
           }
         ]
+      },
+      {
+        "type": "comment",
+        "comment": " 5 "
+      },
+      {
+        "type": "comment",
+        "comment": " 6 "
       }
     ]
   }
