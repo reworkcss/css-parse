@@ -1,0 +1,5 @@
+@-moz-document url-prefix() {
+  .ui-select .ui-btn select {
+    opacity:.0001
+  }
+}

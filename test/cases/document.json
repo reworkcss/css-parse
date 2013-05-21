@@ -1,0 +1,23 @@
+{
+  "stylesheet": {
+    "rules": [
+      {
+        "document": "url-prefix()",
+        "vendor": "-moz-",
+        "rules": [
+          {
+            "selectors": [
+              ".ui-select .ui-btn select"
+            ],
+            "declarations": [
+              {
+                "property": "opacity",
+                "value": ".0001"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

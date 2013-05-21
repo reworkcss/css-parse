@@ -146,7 +146,7 @@ module.exports = function(css){
    * Parse keyframes.
    */
 
-  function keyframes() {
+  function atkeyframes() {
     var m = match(/^@([-\w]+)?keyframes */);
     if (!m) return;
     var vendor = m[1];
@@ -179,7 +179,7 @@ module.exports = function(css){
    * Parse supports.
    */
 
-  function supports() {
+  function atsupports() {
     var m = match(/^@supports *([^{]+)/);
     if (!m) return;
     var supports = m[1].trim();
@@ -198,7 +198,7 @@ module.exports = function(css){
    * Parse media.
    */
 
-  function media() {
+  function atmedia() {
     var m = match(/^@media *([^{]+)/);
     if (!m) return;
     var media = m[1].trim();
@@ -240,6 +240,30 @@ module.exports = function(css){
       type: "page",
       selectors: sel,
       declarations: decls
+    };
+  }
+
+  /**
+   * Parse document.
+   */
+
+  function atdocument() {
+    var m = match(/^@([-\w]+)?document *([^{]+)/);
+    if (!m) return;
+    var vendor = m[1].trim();
+    var doc = m[2].trim();
+
+    if (!open()) return;
+    comments();
+
+    var style = rules();
+
+    if (!close()) return;
+
+    return {
+      document: doc,
+      vendor: vendor,
+      rules: style
     };
   }
 
@@ -320,12 +344,13 @@ module.exports = function(css){
    */
 
   function atrule() {
-    return keyframes()
-      || media()
-      || supports()
+    return atkeyframes()
+      || atmedia()
+      || atsupports()
       || atimport()
       || atcharset()
       || atnamespace()
+      || atdocument()
       || atpage();
   }
 
