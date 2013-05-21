@@ -4,6 +4,9 @@
   "description": "CSS parser",
   "keywords": ["css", "parser", "stylesheet"],
   "author": "TJ Holowaychuk <tj@vision-media.ca>",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --require should"
+  },
   "devDependencies": {
     "mocha": "*",
     "should": "*"
