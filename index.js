@@ -136,6 +136,27 @@ module.exports = function(css){
   }
 
   /**
+   * Parse declarations.
+   */
+
+  function declarations() {
+    var decls = [];
+
+    if (!open()) return;
+    comments();
+
+    // declarations
+    var decl;
+    while (decl = declaration()) {
+      decls.push(decl);
+      comments();
+    }
+
+    if (!close()) return;
+    return decls;
+  }
+
+  /**
    * Parse keyframe.
    */
 
@@ -326,27 +347,6 @@ module.exports = function(css){
     var ret = { type: name };
     ret[name] = m[1].trim();
     return ret;
-  }
-
-  /**
-   * Parse declarations.
-   */
-
-  function declarations() {
-    var decls = [];
-
-    if (!open()) return;
-    comments();
-
-    // declarations
-    var decl;
-    while (decl = declaration()) {
-      decls.push(decl);
-      comments();
-    }
-
-    if (!close()) return;
-    return decls;
   }
 
   /**
