@@ -365,7 +365,10 @@ module.exports = function(css, opts){
     if (!sel) return;
     comments();
     var ret = { selectors: sel, declarations: declarations() };
-    if (loc) ret.loc = loc;
+    if (loc) {
+      if (opts.file) loc.file = opts.file;
+      ret.loc = loc;
+    }
     return ret;
   }
 
