@@ -77,13 +77,16 @@ module.exports = function(css){
 
   function comment() {
     if ('/' != css[0] || '*' != css[1]) return;
+
     var i = 2;
-    while ('*' != css[i] || '/' != css[i + 1]) ++i;
+    while (null != css[i] && ('*' != css[i] || '/' != css[i + 1])) ++i;
     i += 2;
-    var comment = css.slice(2, i - 2);
+
+    var str = css.slice(2, i - 2);
     css = css.slice(i);
     whitespace();
-    return { comment: comment };
+
+    return { comment: str };
   }
 
   /**
