@@ -10,7 +10,11 @@
             "property": "foo\n  ",
             "value": "'bar'"
           }
-        ]
+        ],
+        "loc": {
+          "line": 1,
+          "column": 1
+        }
       },
       {
         "selectors": [
@@ -25,7 +29,11 @@
             "property": "bar",
             "value": "baz"
           }
-        ]
+        ],
+        "loc": {
+          "line": 5,
+          "column": 4
+        }
       },
       {
         "selectors": [
@@ -40,7 +48,11 @@
             "property": "bar\n     ",
             "value": "baz"
           }
-        ]
+        ],
+        "loc": {
+          "line": 6,
+          "column": 4
+        }
       }
     ]
   }

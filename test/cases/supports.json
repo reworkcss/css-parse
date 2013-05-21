@@ -17,7 +17,11 @@
                 "property": "display",
                 "value": "flex"
               }
-            ]
+            ],
+            "loc": {
+              "line": 2,
+              "column": 3
+            }
           }
         ]
       }

@@ -14,7 +14,11 @@
             "property": "the-species",
             "value": "called \"ferrets\""
           }
-        ]
+        ],
+        "loc": {
+          "line": 2,
+          "column": 1
+        }
       }
     ]
   }
