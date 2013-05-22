@@ -127,12 +127,12 @@ module.exports = function(css, options){
     updatePosition(str);
     css = css.slice(i);
     column += 2;
-    whitespace();
-
-    return pos({
+    var ret = pos({
       type: 'comment',
       comment: str
     });
+    whitespace();
+    return ret;
   }
 
   /**
@@ -393,11 +393,13 @@ module.exports = function(css, options){
 
   function _atrule(name) {
     var pos = position();
-    var m = match(new RegExp('^@' + name + ' *([^;\\n]+);\\s*'));
+    var m = match(new RegExp('^@' + name + ' *([^;\\n]+);'));
     if (!m) return;
     var ret = { type: name };
     ret[name] = m[1].trim();
-    return pos(ret);
+    ret = pos(ret);
+    whitespace();
+    return ret;
   }
 
   /**
