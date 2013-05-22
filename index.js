@@ -20,14 +20,20 @@ module.exports = function(css, options){
     column = ~i ? str.length-i : column + str.length;
   }
 
+  /**
+   * Mark position and patch `node.position`.
+   */
+
   function position() {
     var start = { line: lineno, column: column };
     if (!options.position) return positionNoop;
+
     return function(node){
       node.position = {
         start: start,
         end: { line: lineno, column: column }
       };
+
       whitespace();
       return node;
     }
@@ -36,6 +42,7 @@ module.exports = function(css, options){
   /**
    * Return `node`.
    */
+
   function positionNoop(node) {
     whitespace();
     return node;
