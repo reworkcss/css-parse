@@ -17,7 +17,7 @@ module.exports = function(css, options){
     var lines = str.match(/\n/g);
     if (lines) lineno += lines.length;
     var i = str.lastIndexOf('\n');
-    column = ~i ? str.length-i : column + str.length;
+    column = ~i ? str.length - i : column + str.length;
   }
 
   /**
@@ -142,6 +142,7 @@ module.exports = function(css, options){
     updatePosition(str);
     css = css.slice(i);
     column += 2;
+
     return pos({
       type: 'comment',
       comment: str
