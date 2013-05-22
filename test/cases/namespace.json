@@ -4,11 +4,31 @@
     "rules": [
       {
         "type": "namespace",
-        "namespace": "\"http://www.w3.org/1999/xhtml\""
+        "namespace": "\"http://www.w3.org/1999/xhtml\"",
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 1,
+            "column": 43
+          }
+        }
       },
       {
         "type": "namespace",
-        "namespace": "svg \"http://www.w3.org/2000/svg\""
+        "namespace": "svg \"http://www.w3.org/2000/svg\"",
+        "position": {
+          "start": {
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "line": 2,
+            "column": 45
+          }
+        }
       }
     ]
   }
