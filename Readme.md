@@ -1,7 +1,7 @@
 
 # css-parse
 
-  CSS parser.
+  JavaScript CSS parser for nodejs and the browser.
 
 ## Example
 
