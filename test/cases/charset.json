@@ -4,19 +4,59 @@
     "rules": [
       {
         "type": "charset",
-        "charset": "\"UTF-8\""
+        "charset": "\"UTF-8\"",
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 1,
+            "column": 25
+          }
+        }
       },
       {
         "type": "comment",
-        "comment": " Set the encoding of the style sheet to Unicode UTF-8"
+        "comment": " Set the encoding of the style sheet to Unicode UTF-8",
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 25
+          },
+          "end": {
+            "line": 2,
+            "column": 1
+          }
+        }
       },
       {
         "type": "charset",
-        "charset": "'iso-8859-15'"
+        "charset": "'iso-8859-15'",
+        "position": {
+          "start": {
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "line": 2,
+            "column": 25
+          }
+        }
       },
       {
         "type": "comment",
-        "comment": " Set the encoding of the style sheet to Latin-9 (Western European languages, with euro sign) "
+        "comment": " Set the encoding of the style sheet to Latin-9 (Western European languages, with euro sign) ",
+        "position": {
+          "start": {
+            "line": 2,
+            "column": 25
+          },
+          "end": {
+            "line": 2,
+            "column": 122
+          }
+        }
       }
     ]
   }
