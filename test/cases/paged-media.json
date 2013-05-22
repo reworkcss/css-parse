@@ -12,9 +12,29 @@
           {
             "type": "declaration",
             "property": "color",
-            "value": "green"
+            "value": "green",
+            "position": {
+              "start": {
+                "line": 2,
+                "column": 3
+              },
+              "end": {
+                "line": 2,
+                "column": 15
+              }
+            }
           }
-        ]
+        ],
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 3,
+            "column": 2
+          }
+        }
       },
       {
         "type": "page",
@@ -23,9 +43,29 @@
           {
             "type": "declaration",
             "property": "font-size",
-            "value": "16pt"
+            "value": "16pt",
+            "position": {
+              "start": {
+                "line": 6,
+                "column": 3
+              },
+              "end": {
+                "line": 6,
+                "column": 18
+              }
+            }
           }
-        ]
+        ],
+        "position": {
+          "start": {
+            "line": 5,
+            "column": 1
+          },
+          "end": {
+            "line": 7,
+            "column": 2
+          }
+        }
       }
     ]
   }
