@@ -28,9 +28,17 @@ module.exports = function(css, options){
         start: start,
         end: { line: lineno, column: column }
       };
-
+      whitespace();
       return node;
     }
+  }
+
+  /**
+   * Return `node`.
+   */
+  function positionNoop(node) {
+    whitespace();
+    return node;
   }
 
   /**
@@ -59,7 +67,7 @@ module.exports = function(css, options){
    */
 
   function close() {
-    return match(/^}\s*/);
+    return match(/^}/);
   }
 
   /**
@@ -127,12 +135,10 @@ module.exports = function(css, options){
     updatePosition(str);
     css = css.slice(i);
     column += 2;
-    var ret = pos({
+    return pos({
       type: 'comment',
       comment: str
     });
-    whitespace();
-    return ret;
   }
 
   /**
@@ -397,9 +403,7 @@ module.exports = function(css, options){
     if (!m) return;
     var ret = { type: name };
     ret[name] = m[1].trim();
-    ret = pos(ret);
-    whitespace();
-    return ret;
+    return pos(ret);
   }
 
   /**
@@ -438,10 +442,3 @@ module.exports = function(css, options){
   return stylesheet();
 };
 
-/**
- * Return `node`.
- */
-
-function positionNoop(node) {
-  return node;
-}
