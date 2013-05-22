@@ -15,14 +15,44 @@
               {
                 "type": "declaration",
                 "property": "background",
-                "value": "#fffef0"
+                "value": "#fffef0",
+                "position": {
+                  "start": {
+                    "line": 3,
+                    "column": 5
+                  },
+                  "end": {
+                    "line": 3,
+                    "column": 24
+                  }
+                }
               },
               {
                 "type": "declaration",
                 "property": "color",
-                "value": "#300"
+                "value": "#300",
+                "position": {
+                  "start": {
+                    "line": 4,
+                    "column": 5
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 16
+                  }
+                }
               }
-            ]
+            ],
+            "position": {
+              "start": {
+                "line": 2,
+                "column": 3
+              },
+              "end": {
+                "line": 5,
+                "column": 4
+              }
+            }
           },
           {
             "type": "rule",
@@ -33,16 +63,56 @@
               {
                 "type": "declaration",
                 "property": "max-width",
-                "value": "35em"
+                "value": "35em",
+                "position": {
+                  "start": {
+                    "line": 7,
+                    "column": 5
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 20
+                  }
+                }
               },
               {
                 "type": "declaration",
                 "property": "margin",
-                "value": "0 auto"
+                "value": "0 auto",
+                "position": {
+                  "start": {
+                    "line": 8,
+                    "column": 5
+                  },
+                  "end": {
+                    "line": 8,
+                    "column": 19
+                  }
+                }
               }
-            ]
+            ],
+            "position": {
+              "start": {
+                "line": 6,
+                "column": 3
+              },
+              "end": {
+                "line": 9,
+                "column": 4
+              }
+            }
           }
-        ]
+        ],
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 10,
+            "column": 2
+          }
+        }
       },
       {
         "type": "media",
@@ -57,14 +127,44 @@
               {
                 "type": "declaration",
                 "property": "background",
-                "value": "#fff"
+                "value": "#fff",
+                "position": {
+                  "start": {
+                    "line": 14,
+                    "column": 5
+                  },
+                  "end": {
+                    "line": 14,
+                    "column": 21
+                  }
+                }
               },
               {
                 "type": "declaration",
                 "property": "color",
-                "value": "#000"
+                "value": "#000",
+                "position": {
+                  "start": {
+                    "line": 15,
+                    "column": 5
+                  },
+                  "end": {
+                    "line": 15,
+                    "column": 16
+                  }
+                }
               }
-            ]
+            ],
+            "position": {
+              "start": {
+                "line": 13,
+                "column": 3
+              },
+              "end": {
+                "line": 16,
+                "column": 4
+              }
+            }
           },
           {
             "type": "rule",
@@ -75,16 +175,56 @@
               {
                 "type": "declaration",
                 "property": "padding",
-                "value": "1in"
+                "value": "1in",
+                "position": {
+                  "start": {
+                    "line": 18,
+                    "column": 5
+                  },
+                  "end": {
+                    "line": 18,
+                    "column": 17
+                  }
+                }
               },
               {
                 "type": "declaration",
                 "property": "border",
-                "value": "0.5pt solid #666"
+                "value": "0.5pt solid #666",
+                "position": {
+                  "start": {
+                    "line": 19,
+                    "column": 5
+                  },
+                  "end": {
+                    "line": 19,
+                    "column": 29
+                  }
+                }
               }
-            ]
+            ],
+            "position": {
+              "start": {
+                "line": 17,
+                "column": 3
+              },
+              "end": {
+                "line": 20,
+                "column": 4
+              }
+            }
           }
-        ]
+        ],
+        "position": {
+          "start": {
+            "line": 12,
+            "column": 1
+          },
+          "end": {
+            "line": 21,
+            "column": 2
+          }
+        }
       }
     ]
   }

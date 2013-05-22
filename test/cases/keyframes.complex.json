@@ -15,14 +15,44 @@
               {
                 "type": "declaration",
                 "property": "top",
-                "value": "0"
+                "value": "0",
+                "position": {
+                  "start": {
+                    "line": 2,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 14
+                  }
+                }
               },
               {
                 "type": "declaration",
                 "property": "left",
-                "value": "0"
+                "value": "0",
+                "position": {
+                  "start": {
+                    "line": 2,
+                    "column": 16
+                  },
+                  "end": {
+                    "line": 2,
+                    "column": 24
+                  }
+                }
               }
-            ]
+            ],
+            "position": {
+              "start": {
+                "line": 2,
+                "column": 3
+              },
+              "end": {
+                "line": 2,
+                "column": 25
+              }
+            }
           },
           {
             "type": "keyframe",
@@ -33,9 +63,29 @@
               {
                 "type": "declaration",
                 "property": "top",
-                "value": "50px"
+                "value": "50px",
+                "position": {
+                  "start": {
+                    "line": 3,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 3,
+                    "column": 22
+                  }
+                }
               }
-            ]
+            ],
+            "position": {
+              "start": {
+                "line": 3,
+                "column": 3
+              },
+              "end": {
+                "line": 3,
+                "column": 23
+              }
+            }
           },
           {
             "type": "keyframe",
@@ -48,9 +98,29 @@
               {
                 "type": "declaration",
                 "property": "left",
-                "value": "50px"
+                "value": "50px",
+                "position": {
+                  "start": {
+                    "line": 6,
+                    "column": 15
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 26
+                  }
+                }
               }
-            ]
+            ],
+            "position": {
+              "start": {
+                "line": 4,
+                "column": 3
+              },
+              "end": {
+                "line": 6,
+                "column": 27
+              }
+            }
           },
           {
             "type": "keyframe",
@@ -61,16 +131,56 @@
               {
                 "type": "declaration",
                 "property": "top",
-                "value": "100px"
+                "value": "100px",
+                "position": {
+                  "start": {
+                    "line": 7,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 20
+                  }
+                }
               },
               {
                 "type": "declaration",
                 "property": "left",
-                "value": "100%"
+                "value": "100%",
+                "position": {
+                  "start": {
+                    "line": 7,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 33
+                  }
+                }
               }
-            ]
+            ],
+            "position": {
+              "start": {
+                "line": 7,
+                "column": 3
+              },
+              "end": {
+                "line": 7,
+                "column": 34
+              }
+            }
           }
-        ]
+        ],
+        "position": {
+          "start": {
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "line": 8,
+            "column": 2
+          }
+        }
       }
     ]
   }

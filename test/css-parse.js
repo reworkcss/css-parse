@@ -14,9 +14,9 @@ describe('parse(str)', function(){
     if (~file.indexOf('json')) return;
     file = path.basename(file, '.css');
     it('should parse ' + file, function(){
-      var css = read(path.join('test', 'cases', file + '.css'), 'utf8').trim();
-      var json = read(path.join('test', 'cases', file + '.json'), 'utf8').trim();
-      var ret = parse(css);
+      var css = read(path.join('test', 'cases', file + '.css'), 'utf8');
+      var json = read(path.join('test', 'cases', file + '.json'), 'utf8');
+      var ret = parse(css, { position: true });
       ret = JSON.stringify(ret, null, 2);
       ret.should.equal(json);
     })
