@@ -7,18 +7,38 @@ module.exports = function(css, options){
    */
 
   var lineno = 1;
+  var column = 1;
+
+  /**
+   * Update lineno and column based on `str`.
+   */
+
+  function updatePosition(str) {
+    var lines = str.match(/\n/g);
+    if (lines) lineno += lines.length;
+    var i = str.lastIndexOf('\n');
+    column = ~i ? str.length-i : column + str.length;
+  }
 
   function position() {
-    var start = { line: lineno };
+    var start = { line: lineno, column: column };
     if (!options.position) return positionNoop;
     return function(node){
       node.position = {
         start: start,
-        end: { line: lineno }
+        end: { line: lineno, column: column }
       };
-
+      whitespace();
       return node;
     }
+  }
+
+  /**
+   * Return `node`.
+   */
+  function positionNoop(node) {
+    whitespace();
+    return node;
   }
 
   /**
@@ -47,7 +67,7 @@ module.exports = function(css, options){
    */
 
   function close() {
-    return match(/^}\s*/);
+    return match(/^}/);
   }
 
   /**
@@ -74,7 +94,7 @@ module.exports = function(css, options){
     var m = re.exec(css);
     if (!m) return;
     var str = m[0];
-    lineno += lines(str);
+    updatePosition(str);
     css = css.slice(str.length);
     return m;
   }
@@ -111,11 +131,10 @@ module.exports = function(css, options){
     i += 2;
 
     var str = css.slice(2, i - 2);
+    column += 2;
+    updatePosition(str);
     css = css.slice(i);
-    whitespace();
-
-    lineno += lines(str);
-
+    column += 2;
     return pos({
       type: 'comment',
       comment: str
@@ -148,18 +167,18 @@ module.exports = function(css, options){
     if (!match(/^:\s*/)) return;
 
     // val
-    var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)\s*/);
+    var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)/);
     if (!val) return;
-    val = val[0].trim();
+
+    var ret = pos({
+      type: 'declaration',
+      property: prop,
+      value: val[0].trim()
+    });
 
     // ;
     match(/^[;\s]*/);
-
-    return pos({
-      type: 'declaration',
-      property: prop,
-      value: val
-    });
+    return ret;
   }
 
   /**
@@ -380,7 +399,7 @@ module.exports = function(css, options){
 
   function _atrule(name) {
     var pos = position();
-    var m = match(new RegExp('^@' + name + ' *([^;\\n]+);\\s*'));
+    var m = match(new RegExp('^@' + name + ' *([^;\\n]+);'));
     if (!m) return;
     var ret = { type: name };
     ret[name] = m[1].trim();
@@ -423,18 +442,3 @@ module.exports = function(css, options){
   return stylesheet();
 };
 
-/**
- * Lines within `str`.
- */
-
-function lines(str) {
-  return str.split('\n').length - 1;
-}
-
-/**
- * Return `node`.
- */
-
-function positionNoop(node) {
-  return node;
-}
