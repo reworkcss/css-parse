@@ -18,8 +18,8 @@
                 "column": 3
               },
               "end": {
-                "line": 4,
-                "column": 3
+                "line": 3,
+                "column": 13
               }
             }
           },
@@ -33,8 +33,8 @@
                 "column": 3
               },
               "end": {
-                "line": 5,
-                "column": 3
+                "line": 4,
+                "column": 32
               }
             }
           },
@@ -48,8 +48,8 @@
                 "column": 3
               },
               "end": {
-                "line": 6,
-                "column": 1
+                "line": 5,
+                "column": 19
               }
             }
           }

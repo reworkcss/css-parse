@@ -23,7 +23,7 @@
                   },
                   "end": {
                     "line": 2,
-                    "column": 16
+                    "column": 14
                   }
                 }
               },
@@ -139,7 +139,7 @@
                   },
                   "end": {
                     "line": 7,
-                    "column": 22
+                    "column": 20
                   }
                 }
               },

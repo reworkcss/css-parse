@@ -22,8 +22,8 @@
                     "column": 4
                   },
                   "end": {
-                    "line": 3,
-                    "column": 6
+                    "line": 2,
+                    "column": 14
                   }
                 }
               }
@@ -56,7 +56,7 @@
                   },
                   "end": {
                     "line": 6,
-                    "column": 17
+                    "column": 16
                   }
                 }
               }

@@ -19,8 +19,8 @@
                 "column": 3
               },
               "end": {
-                "line": 3,
-                "column": 1
+                "line": 2,
+                "column": 15
               }
             }
           }
@@ -50,8 +50,8 @@
                 "column": 3
               },
               "end": {
-                "line": 7,
-                "column": 1
+                "line": 6,
+                "column": 18
               }
             }
           }

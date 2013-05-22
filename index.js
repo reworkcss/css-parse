@@ -167,18 +167,18 @@ module.exports = function(css, options){
     if (!match(/^:\s*/)) return;
 
     // val
-    var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)\s*/);
+    var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)/);
     if (!val) return;
-    val = val[0].trim();
+
+    var ret = pos({
+      type: 'declaration',
+      property: prop,
+      value: val[0].trim()
+    });
 
     // ;
     match(/^[;\s]*/);
-
-    return pos({
-      type: 'declaration',
-      property: prop,
-      value: val
-    });
+    return ret;
   }
 
   /**
