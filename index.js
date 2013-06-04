@@ -359,7 +359,7 @@ module.exports = function(css, options){
     var m = match(/^@([-\w]+)?document *([^{]+)/);
     if (!m) return;
 
-    var vendor = m[1].trim();
+    var vendor = (m[1] || '').trim();
     var doc = m[2].trim();
 
     if (!open()) return;
