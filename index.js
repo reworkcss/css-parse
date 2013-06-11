@@ -154,9 +154,13 @@ module.exports = function(css, options){
    */
 
   function selector() {
-    var m = match(/^([^{]+)/);
+    var m = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|[^{])+)/);
     if (!m) return;
-    return m[0].trim().split(/\s*,\s*/);
+    var matches = m[0].trim().match(/((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|[^,])+)/g);
+    for (var i=0, len=matches.length; i<len; ++i) {
+      matches[i] = matches[i].trim();
+    }
+    return matches;
   }
 
   /**
