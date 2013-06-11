@@ -3,6 +3,18 @@
 
   JavaScript CSS parser for nodejs and the browser.
 
+## Installation
+
+```
+$ npm install css-parse
+$ component install visionmedia/css-parse
+```
+
+## Options
+
+  - `position` add line number and column position data to nodes
+  - `comments` add comments array to the output
+
 ## Example
 
 css:
