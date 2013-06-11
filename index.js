@@ -14,6 +14,7 @@ module.exports = function(css, options){
    */
 
   function updatePosition(str) {
+    if (!options.position) return;
     var lines = str.match(/\n/g);
     if (lines) lineno += lines.length;
     var i = str.lastIndexOf('\n');
