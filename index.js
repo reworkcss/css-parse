@@ -3,6 +3,16 @@ module.exports = function(css, options){
   options = options || {};
 
   /**
+   * Root node.
+   */
+
+  var root = {
+    type: 'stylesheet',
+    stylesheet: {},
+    comments: []
+  };
+
+  /**
    * Positional.
    */
 
@@ -47,19 +57,6 @@ module.exports = function(css, options){
   function positionNoop(node) {
     whitespace();
     return node;
-  }
-
-  /**
-   * Parse stylesheet.
-   */
-
-  function stylesheet() {
-    return {
-      type: 'stylesheet',
-      stylesheet: {
-        rules: rules()
-      }
-    };
   }
 
   /**
@@ -119,11 +116,13 @@ module.exports = function(css, options){
    * Parse comments;
    */
 
-  function comments(rules) {
+  function comments() {
     var c;
-    rules = rules || [];
-    while (c = comment()) rules.push(c);
-    return rules;
+    while (c = comment()) {
+      if (options.comments) {
+        root.comments.push(c);
+      }
+    }
   }
 
   /**
@@ -198,13 +197,13 @@ module.exports = function(css, options){
     var decls = [];
 
     if (!open()) return;
-    comments(decls);
+    comments();
 
     // declarations
     var decl;
     while (decl = declaration()) {
       decls.push(decl);
-      comments(decls);
+      comments();
     }
 
     if (!close()) return;
@@ -448,6 +447,8 @@ module.exports = function(css, options){
     });
   }
 
-  return stylesheet();
+  root.stylesheet.rules = rules();
+
+  return root;
 };
 
