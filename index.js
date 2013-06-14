@@ -14,7 +14,6 @@ module.exports = function(css, options){
    */
 
   function updatePosition(str) {
-    if (!options.position) return;
     var lines = str.match(/\n/g);
     if (lines) lineno += lines.length;
     var i = str.lastIndexOf('\n');
@@ -47,6 +46,18 @@ module.exports = function(css, options){
   function positionNoop(node) {
     whitespace();
     return node;
+  }
+
+  /**
+   * Error `msg`.
+   */
+
+  function error(msg) {
+    var err = new Error(msg + ' near line ' + lineno + ':' + column);
+    err.line = lineno;
+    err.column = column;
+    err.source = css;
+    throw err;
   }
 
   /**
@@ -173,11 +184,11 @@ module.exports = function(css, options){
     prop = prop[0];
 
     // :
-    if (!match(/^:\s*/)) return;
+    if (!match(/^:\s*/)) return error("property missing ':'");
 
     // val
     var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)/);
-    if (!val) return;
+    if (!val) return error('property missing value');
 
     var ret = pos({
       type: 'declaration',
@@ -187,6 +198,7 @@ module.exports = function(css, options){
 
     // ;
     match(/^[;\s]*/);
+
     return ret;
   }
 
@@ -197,7 +209,7 @@ module.exports = function(css, options){
   function declarations() {
     var decls = [];
 
-    if (!open()) return;
+    if (!open()) return error("missing '{'");
     comments(decls);
 
     // declarations
@@ -207,7 +219,7 @@ module.exports = function(css, options){
       comments(decls);
     }
 
-    if (!close()) return;
+    if (!close()) return error("missing '}'");
     return decls;
   }
 
@@ -247,10 +259,10 @@ module.exports = function(css, options){
 
     // identifier
     var m = match(/^([-\w]+)\s*/);
-    if (!m) return;
+    if (!m) return error("@keyframes missing name");
     var name = m[1];
 
-    if (!open()) return;
+    if (!open()) return error("@keyframes missing '{'");
     comments();
 
     var frame;
@@ -260,7 +272,7 @@ module.exports = function(css, options){
       comments();
     }
 
-    if (!close()) return;
+    if (!close()) return error("@keyframes missing '}'");
 
     return pos({
       type: 'keyframes',
@@ -281,12 +293,12 @@ module.exports = function(css, options){
     if (!m) return;
     var supports = m[1].trim();
 
-    if (!open()) return;
+    if (!open()) return error("@supports missing '{'");
     comments();
 
     var style = rules();
 
-    if (!close()) return;
+    if (!close()) return error("@supports missing '}'");
 
     return pos({
       type: 'supports',
@@ -306,12 +318,12 @@ module.exports = function(css, options){
     if (!m) return;
     var media = m[1].trim();
 
-    if (!open()) return;
+    if (!open()) return error("@media missing '{'");
     comments();
 
     var style = rules();
 
-    if (!close()) return;
+    if (!close()) return error("@media missing '}'");
 
     return pos({
       type: 'media',
@@ -332,7 +344,7 @@ module.exports = function(css, options){
     var sel = selector() || [];
     var decls = [];
 
-    if (!open()) return;
+    if (!open()) return error("@page missing '{'");
     comments();
 
     // declarations
@@ -342,7 +354,7 @@ module.exports = function(css, options){
       comments();
     }
 
-    if (!close()) return;
+    if (!close()) return error("@page missing '}'");
 
     return pos({
       type: 'page',
@@ -363,12 +375,12 @@ module.exports = function(css, options){
     var vendor = (m[1] || '').trim();
     var doc = m[2].trim();
 
-    if (!open()) return;
+    if (!open()) return error("@document missing '{'");
     comments();
 
     var style = rules();
 
-    if (!close()) return;
+    if (!close()) return error("@document missing '}'");
 
     return pos({
       type: 'document',
