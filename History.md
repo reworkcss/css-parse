@@ -1,4 +1,10 @@
 
+1.5.0 / 2013-06-18 
+==================
+
+ * add error reporting
+ * fix @document with no vendor prefix
+
 1.4.0 / 2013-05-22 
 ==================
 
