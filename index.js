@@ -1,4 +1,3 @@
-
 module.exports = function(css, options){
   options = options || {};
 
@@ -405,6 +404,14 @@ module.exports = function(css, options){
   function atcharset() {
     return _atrule('charset');
   }
+  
+  /**
+   * Parse font-face
+   */
+
+  function atfontface() {
+    return _atrule('font-face');
+  }
 
   /**
    * Parse namespace
@@ -437,6 +444,7 @@ module.exports = function(css, options){
       || atsupports()
       || atimport()
       || atcharset()
+      || atfontface()
       || atnamespace()
       || atdocument()
       || atpage();
