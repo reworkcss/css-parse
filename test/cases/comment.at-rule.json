@@ -1,0 +1,56 @@
+{
+  "type":"stylesheet",
+  "stylesheet":{
+    "rules":[
+      {
+        "type":"keyframes",
+        "name":"test",
+        "vendor":"-webkit-",
+        "keyframes":[
+          {
+            "type":"comment",
+            "comment":" 0% above "
+          },
+          {
+            "type":"keyframe",
+            "values":[
+              "0%"
+            ],
+            "declarations":[
+              {
+                "type":"comment",
+                "comment":" 0% inside "
+              },
+              {
+                "type":"declaration",
+                "property":"color",
+                "value":"red"
+              }
+            ]
+          },
+          {
+            "type":"comment",
+            "comment":" 100% above "
+          },
+          {
+            "type":"keyframe",
+            "values":[
+              "100%"
+            ],
+            "declarations":[
+              {
+                "type":"comment",
+                "comment":" 100% above "
+              },
+              {
+                "type":"declaration",
+                "property":"color",
+                "value":"green"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
