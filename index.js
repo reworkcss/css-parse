@@ -339,16 +339,15 @@ module.exports = function(css, options){
     if (!m) return;
 
     var sel = selector() || [];
-    var decls = [];
 
     if (!open()) return error("@page missing '{'");
-    comments();
+    var decls = comments();
 
     // declarations
     var decl;
     while (decl = declaration()) {
       decls.push(decl);
-      comments();
+      decls = decls.concat(comments());
     }
 
     if (!close()) return error("@page missing '}'");
