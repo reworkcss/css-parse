@@ -373,9 +373,8 @@ module.exports = function(css, options){
     var doc = m[2].trim();
 
     if (!open()) return error("@document missing '{'");
-    comments();
 
-    var style = rules();
+    var style = comments().concat(rules());
 
     if (!close()) return error("@document missing '}'");
 
