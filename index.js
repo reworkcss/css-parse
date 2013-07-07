@@ -263,13 +263,12 @@ module.exports = function(css, options){
     var name = m[1];
 
     if (!open()) return error("@keyframes missing '{'");
-    comments();
 
     var frame;
-    var frames = [];
+    var frames = comments();
     while (frame = keyframe()) {
       frames.push(frame);
-      comments();
+      frames = frames.concat(comments());
     }
 
     if (!close()) return error("@keyframes missing '}'");
