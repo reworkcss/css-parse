@@ -293,9 +293,8 @@ module.exports = function(css, options){
     var supports = m[1].trim();
 
     if (!open()) return error("@supports missing '{'");
-    comments();
 
-    var style = rules();
+    var style = comments().concat(rules());
 
     if (!close()) return error("@supports missing '}'");
 
