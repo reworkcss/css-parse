@@ -318,9 +318,8 @@ module.exports = function(css, options){
     var media = m[1].trim();
 
     if (!open()) return error("@media missing '{'");
-    comments();
 
-    var style = rules();
+    var style = comments().concat(rules());
 
     if (!close()) return error("@media missing '}'");
 
