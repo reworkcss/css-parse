@@ -263,13 +263,12 @@ module.exports = function(css, options){
     var name = m[1];
 
     if (!open()) return error("@keyframes missing '{'");
-    comments();
 
     var frame;
-    var frames = [];
+    var frames = comments();
     while (frame = keyframe()) {
       frames.push(frame);
-      comments();
+      frames = frames.concat(comments());
     }
 
     if (!close()) return error("@keyframes missing '}'");
@@ -294,9 +293,8 @@ module.exports = function(css, options){
     var supports = m[1].trim();
 
     if (!open()) return error("@supports missing '{'");
-    comments();
 
-    var style = rules();
+    var style = comments().concat(rules());
 
     if (!close()) return error("@supports missing '}'");
 
@@ -319,9 +317,8 @@ module.exports = function(css, options){
     var media = m[1].trim();
 
     if (!open()) return error("@media missing '{'");
-    comments();
 
-    var style = rules();
+    var style = comments().concat(rules());
 
     if (!close()) return error("@media missing '}'");
 
@@ -342,16 +339,15 @@ module.exports = function(css, options){
     if (!m) return;
 
     var sel = selector() || [];
-    var decls = [];
 
     if (!open()) return error("@page missing '{'");
-    comments();
+    var decls = comments();
 
     // declarations
     var decl;
     while (decl = declaration()) {
       decls.push(decl);
-      comments();
+      decls = decls.concat(comments());
     }
 
     if (!close()) return error("@page missing '}'");
@@ -376,9 +372,8 @@ module.exports = function(css, options){
     var doc = m[2].trim();
 
     if (!open()) return error("@document missing '{'");
-    comments();
 
-    var style = rules();
+    var style = comments().concat(rules());
 
     if (!close()) return error("@document missing '}'");
 
