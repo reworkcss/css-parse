@@ -1,4 +1,10 @@
 
+1.5.1 / 2013-07-23 
+==================
+
+ * fix // declaration hack. Closes #42
+ * fix comments for several nodes (#34).
+
 1.5.0 / 2013-06-18 
 ==================
 
