@@ -179,7 +179,7 @@ module.exports = function(css, options){
     var pos = position();
 
     // prop
-    var prop = match(/^(\*?[//*-\w]+)\s*/);
+    var prop = match(/^(\*?[/*-\w]+)\s*/);
     if (!prop) return;
     prop = prop[0];
 
