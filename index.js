@@ -128,7 +128,7 @@ module.exports = function(css, options){
     var rules = [];
     whitespace();
     comments(rules);
-    while (css[0] != '}' && (node = atrule() || rule())) {
+    while (css.charAt(0) != '}' && (node = atrule() || rule())) {
       rules.push(node);
       comments(rules);
     }
@@ -173,10 +173,10 @@ module.exports = function(css, options){
 
   function comment() {
     var pos = position();
-    if ('/' != css[0] || '*' != css[1]) return;
+    if ('/' != css.charAt(0) || '*' != css.charAt(1)) return;
 
     var i = 2;
-    while (null != css[i] && ('*' != css[i] || '/' != css[i + 1])) ++i;
+    while (null != css.charAt(i) && ('*' != css.charAt(i) || '/' != css.charAt(i + 1))) ++i;
     i += 2;
 
     var str = css.slice(2, i - 2);
