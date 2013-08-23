@@ -192,8 +192,8 @@ module.exports = function(css, options){
 
     var ret = pos({
       type: 'declaration',
-      property: prop,
-      value: val[0].trim()
+      property: prop.replace(/\/\*.*\*\//g, ''),
+      value: val[0].trim().replace(/\/\*.*\*\//g, '')
     });
 
     // ;
