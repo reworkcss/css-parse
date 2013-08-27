@@ -10,36 +10,6 @@ module.exports = function(css, options){
   var column = 1;
 
   /**
-   * Shim-wrapper for trim. Will use native trim if supported, otherwise the trim
-   * found at https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js
-   * at commit 32ff9747d5baaa446d5a49d0078ed38fcff93ab0
-   *
-   * Modified a bit to not pollute String prototype.
-   */
-  
-  function trim(str) {
-    if (str === void 0 || str === null) {
-      throw new TypeError('trim called on null or undefined');
-    }
-
-    var ws = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
-    '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028' +
-    '\u2029\uFEFF';
-
-    if (!String.prototype.trim || ws.trim()) {
-      // http://blog.stevenlevithan.com/archives/faster-trim-javascript
-      // http://perfectionkills.com/whitespace-deviations/
-      ws = "[" + ws + "]";
-      var trimBeginRegexp = new RegExp("^" + ws + ws + "*");
-      var trimEndRegexp = new RegExp(ws + ws + "*$"); 
-
-      return String(str).replace(trimBeginRegexp, "").replace(trimEndRegexp, "");
-    }
-
-    return String(str).trim();
-  }
-
-  /**
    * Update lineno and column based on `str`.
    */
 
@@ -198,7 +168,7 @@ module.exports = function(css, options){
   function selector() {
     var m = match(/^([^{]+)/);
     if (!m) return;
-    return trim(m[0]).split(/\s*,\s*/);
+    return m[0].replace(/^\s+|\s+$/g, '').split(/\s*,\s*/);
   }
 
   /**
@@ -223,7 +193,7 @@ module.exports = function(css, options){
     var ret = pos({
       type: 'declaration',
       property: prop,
-      value: trim(val[0])
+      value: val[0].replace(/^\s+|\s+$/g, '')
     });
 
     // ;
@@ -320,7 +290,7 @@ module.exports = function(css, options){
     var m = match(/^@supports *([^{]+)/);
 
     if (!m) return;
-    var supports = trim(m[1]);
+    var supports = m[1].replace(/^\s+|\s+$/g, '');
 
     if (!open()) return error("@supports missing '{'");
 
@@ -344,7 +314,7 @@ module.exports = function(css, options){
     var m = match(/^@media *([^{]+)/);
 
     if (!m) return;
-    var media = trim(m[1]);
+    var media = m[1].replace(/^\s+|\s+$/g, '');
 
     if (!open()) return error("@media missing '{'");
 
@@ -398,8 +368,8 @@ module.exports = function(css, options){
     var m = match(/^@([-\w]+)?document *([^{]+)/);
     if (!m) return;
 
-    var vendor = trim(m[1] || '');
-    var doc = trim(m[2]);
+    var vendor = (m[1] || '').replace(/^\s+|\s+$/g, '');
+    var doc = m[2].replace(/^\s+|\s+$/g, '');
 
     if (!open()) return error("@document missing '{'");
 
@@ -448,7 +418,7 @@ module.exports = function(css, options){
     var m = match(new RegExp('^@' + name + ' *([^;\\n]+);'));
     if (!m) return;
     var ret = { type: name };
-    ret[name] = trim(m[1]);
+    ret[name] = m[1].replace(/^\s+|\s+$/g, '');
     return pos(ret);
   }
 
