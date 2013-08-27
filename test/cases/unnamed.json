@@ -1,0 +1,38 @@
+{
+    "type": "stylesheet",
+    "stylesheet": {
+        "rules": [
+            {
+                "type": "rule",
+                "selectors": [],
+                "declarations": [
+                    {
+                        "type": "declaration",
+                        "property": "color",
+                        "value": "green",
+                        "position": {
+                            "start": {
+                                "line": 1,
+                                "column": 3
+                            },
+                            "end": {
+                                "line": 1,
+                                "column": 15
+                            }
+                        }
+                    }
+                ],
+                "position": {
+                    "start": {
+                        "line": 1,
+                        "column": 1
+                    },
+                    "end": {
+                        "line": 1,
+                        "column": 18
+                    }
+                }
+            }
+        ]
+    }
+}
