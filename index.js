@@ -98,7 +98,7 @@ module.exports = function(css, options){
     var rules = [];
     whitespace();
     comments(rules);
-    while (css[0] != '}' && (node = atrule() || rule())) {
+    while (css.length > 0 && css[0] != '}' && (node = atrule() || rule())) {
       rules.push(node);
       comments(rules);
     }
@@ -443,9 +443,7 @@ module.exports = function(css, options){
 
   function rule() {
     var pos = position();
-    var sel = selector();
-
-    if (!sel) return;
+    var sel = selector() || [];
     comments();
 
     return pos({
