@@ -98,7 +98,7 @@ module.exports = function(css, options){
     var rules = [];
     whitespace();
     comments(rules);
-    while (css[0] != '}' && (node = atrule() || rule())) {
+    while (css.charAt(0) != '}' && (node = atrule() || rule())) {
       rules.push(node);
       comments(rules);
     }
@@ -143,10 +143,10 @@ module.exports = function(css, options){
 
   function comment() {
     var pos = position();
-    if ('/' != css[0] || '*' != css[1]) return;
+    if ('/' != css.charAt(0) || '*' != css.charAt(1)) return;
 
     var i = 2;
-    while (null != css[i] && ('*' != css[i] || '/' != css[i + 1])) ++i;
+    while (null != css.charAt(i) && ('*' != css.charAt(i) || '/' != css.charAt(i + 1))) ++i;
     i += 2;
 
     var str = css.slice(2, i - 2);
@@ -168,7 +168,7 @@ module.exports = function(css, options){
   function selector() {
     var m = match(/^([^{]+)/);
     if (!m) return;
-    return m[0].trim().split(/\s*,\s*/);
+    return m[0].replace(/^\s+|\s+$/g, '').split(/\s*,\s*/);
   }
 
   /**
@@ -193,7 +193,7 @@ module.exports = function(css, options){
     var ret = pos({
       type: 'declaration',
       property: prop,
-      value: val[0].trim()
+      value: val[0].replace(/^\s+|\s+$/g, '')
     });
 
     // ;
@@ -290,7 +290,7 @@ module.exports = function(css, options){
     var m = match(/^@supports *([^{]+)/);
 
     if (!m) return;
-    var supports = m[1].trim();
+    var supports = m[1].replace(/^\s+|\s+$/g, '');
 
     if (!open()) return error("@supports missing '{'");
 
@@ -314,7 +314,7 @@ module.exports = function(css, options){
     var m = match(/^@media *([^{]+)/);
 
     if (!m) return;
-    var media = m[1].trim();
+    var media = m[1].replace(/^\s+|\s+$/g, '');
 
     if (!open()) return error("@media missing '{'");
 
@@ -368,8 +368,8 @@ module.exports = function(css, options){
     var m = match(/^@([-\w]+)?document *([^{]+)/);
     if (!m) return;
 
-    var vendor = (m[1] || '').trim();
-    var doc = m[2].trim();
+    var vendor = (m[1] || '').replace(/^\s+|\s+$/g, '');
+    var doc = m[2].replace(/^\s+|\s+$/g, '');
 
     if (!open()) return error("@document missing '{'");
 
@@ -418,7 +418,7 @@ module.exports = function(css, options){
     var m = match(new RegExp('^@' + name + ' *([^;\\n]+);'));
     if (!m) return;
     var ret = { type: name };
-    ret[name] = m[1].trim();
+    ret[name] = m[1].replace(/^\s+|\s+$/g, '');
     return pos(ret);
   }
 
