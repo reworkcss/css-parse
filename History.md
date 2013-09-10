@@ -1,4 +1,10 @@
 
+1.5.3 / 2013-09-10 
+==================
+
+ * add trim shim function. Closes #45
+ * fix: parser now correctly parses attributes with whitespace before colon
+
 1.5.2 / 2013-07-28 
 ==================
 
