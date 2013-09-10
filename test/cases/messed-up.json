@@ -10,7 +10,7 @@
         "declarations": [
           {
             "type": "declaration",
-            "property": "foo\n  ",
+            "property": "foo",
             "value": "'bar'",
             "position": {
               "start": {
@@ -91,7 +91,7 @@
         "declarations": [
           {
             "type": "declaration",
-            "property": "foo\n     ",
+            "property": "foo",
             "value": "bar",
             "position": {
               "start": {
@@ -106,7 +106,7 @@
           },
           {
             "type": "declaration",
-            "property": "bar\n     ",
+            "property": "bar",
             "value": "baz",
             "position": {
               "start": {

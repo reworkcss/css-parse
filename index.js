@@ -181,7 +181,7 @@ module.exports = function(css, options){
     // prop
     var prop = match(/^(\*?[-\/\*\w]+)\s*/);
     if (!prop) return;
-    prop = prop[0];
+    prop = prop[0].replace(/^\s+|\s+$/, '');
 
     // :
     if (!match(/^:\s*/)) return error("property missing ':'");
