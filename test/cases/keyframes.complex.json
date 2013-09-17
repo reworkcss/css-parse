@@ -24,7 +24,8 @@
                   "end": {
                     "line": 2,
                     "column": 14
-                  }
+                  },
+                  "source": "keyframes.complex.css"
                 }
               },
               {
@@ -39,7 +40,8 @@
                   "end": {
                     "line": 2,
                     "column": 24
-                  }
+                  },
+                  "source": "keyframes.complex.css"
                 }
               }
             ],
@@ -51,7 +53,8 @@
               "end": {
                 "line": 2,
                 "column": 25
-              }
+              },
+              "source": "keyframes.complex.css"
             }
           },
           {
@@ -72,7 +75,8 @@
                   "end": {
                     "line": 3,
                     "column": 22
-                  }
+                  },
+                  "source": "keyframes.complex.css"
                 }
               }
             ],
@@ -84,7 +88,8 @@
               "end": {
                 "line": 3,
                 "column": 23
-              }
+              },
+              "source": "keyframes.complex.css"
             }
           },
           {
@@ -107,7 +112,8 @@
                   "end": {
                     "line": 6,
                     "column": 26
-                  }
+                  },
+                  "source": "keyframes.complex.css"
                 }
               }
             ],
@@ -119,7 +125,8 @@
               "end": {
                 "line": 6,
                 "column": 27
-              }
+              },
+              "source": "keyframes.complex.css"
             }
           },
           {
@@ -140,7 +147,8 @@
                   "end": {
                     "line": 7,
                     "column": 20
-                  }
+                  },
+                  "source": "keyframes.complex.css"
                 }
               },
               {
@@ -155,7 +163,8 @@
                   "end": {
                     "line": 7,
                     "column": 33
-                  }
+                  },
+                  "source": "keyframes.complex.css"
                 }
               }
             ],
@@ -167,7 +176,8 @@
               "end": {
                 "line": 7,
                 "column": 34
-              }
+              },
+              "source": "keyframes.complex.css"
             }
           }
         ],
@@ -179,7 +189,8 @@
           "end": {
             "line": 8,
             "column": 2
-          }
+          },
+          "source": "keyframes.complex.css"
         }
       }
     ]

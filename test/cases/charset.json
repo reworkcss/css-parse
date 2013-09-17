@@ -13,7 +13,8 @@
           "end": {
             "line": 1,
             "column": 18
-          }
+          },
+          "source": "charset.css"
         }
       },
       {
@@ -27,7 +28,8 @@
           "end": {
             "line": 1,
             "column": 82
-          }
+          },
+          "source": "charset.css"
         }
       },
       {
@@ -41,7 +43,8 @@
           "end": {
             "line": 2,
             "column": 24
-          }
+          },
+          "source": "charset.css"
         }
       },
       {
@@ -55,7 +58,8 @@
           "end": {
             "line": 2,
             "column": 122
-          }
+          },
+          "source": "charset.css"
         }
       }
     ]

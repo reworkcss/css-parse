@@ -25,7 +25,8 @@
                   "end": {
                     "line": 2,
                     "column": 21
-                  }
+                  },
+                  "source": "keyframes.vendor.json"
                 }
               }
             ],
@@ -37,7 +38,8 @@
               "end": {
                 "line": 2,
                 "column": 22
-              }
+              },
+              "source": "keyframes.vendor.json"
             }
           },
           {
@@ -58,7 +60,8 @@
                   "end": {
                     "line": 3,
                     "column": 19
-                  }
+                  },
+                  "source": "keyframes.vendor.json"
                 }
               }
             ],
@@ -70,7 +73,8 @@
               "end": {
                 "line": 3,
                 "column": 20
-              }
+              },
+              "source": "keyframes.vendor.json"
             }
           }
         ],
@@ -82,7 +86,8 @@
           "end": {
             "line": 4,
             "column": 2
-          }
+          },
+          "source": "keyframes.vendor.json"
         }
       }
     ]

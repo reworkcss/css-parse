@@ -24,7 +24,8 @@
                   "end": {
                     "line": 2,
                     "column": 14
-                  }
+                  },
+                  "source": "keyframes.messed.css"
                 }
               }
             ],
@@ -36,7 +37,8 @@
               "end": {
                 "line": 3,
                 "column": 7
-              }
+              },
+              "source": "keyframes.messed.css"
             }
           },
           {
@@ -57,7 +59,8 @@
                   "end": {
                     "line": 6,
                     "column": 16
-                  }
+                  },
+                  "source": "keyframes.messed.css"
                 }
               }
             ],
@@ -69,7 +72,8 @@
               "end": {
                 "line": 6,
                 "column": 18
-              }
+              },
+              "source": "keyframes.messed.css"
             }
           }
         ],
@@ -81,7 +85,8 @@
           "end": {
             "line": 6,
             "column": 19
-          }
+          },
+          "source": "keyframes.messed.css"
         }
       }
     ]

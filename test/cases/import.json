@@ -13,7 +13,8 @@
           "end": {
             "line": 2,
             "column": 36
-          }
+          },
+          "source": "import.css"
         }
       },
       {
@@ -27,7 +28,8 @@
           "end": {
             "line": 3,
             "column": 42
-          }
+          },
+          "source": "import.css"
         }
       },
       {
@@ -41,7 +43,8 @@
           "end": {
             "line": 4,
             "column": 22
-          }
+          },
+          "source": "import.css"
         }
       },
       {
@@ -55,7 +58,8 @@
           "end": {
             "line": 5,
             "column": 41
-          }
+          },
+          "source": "import.css"
         }
       },
       {
@@ -69,7 +73,8 @@
           "end": {
             "line": 6,
             "column": 65
-          }
+          },
+          "source": "import.css"
         }
       }
     ]

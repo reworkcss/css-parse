@@ -31,7 +31,8 @@ module.exports = function(css, options){
     return function(node){
       node.position = {
         start: start,
-        end: { line: lineno, column: column }
+        end: { line: lineno, column: column },
+        source: options.source
       };
 
       whitespace();

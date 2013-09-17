@@ -13,7 +13,8 @@
           "end": {
             "line": 2,
             "column": 39
-          }
+          },
+          "source": "import.messed.css"
         }
       },
       {
@@ -27,7 +28,8 @@
           "end": {
             "line": 3,
             "column": 44
-          }
+          },
+          "source": "import.messed.css"
         }
       },
       {
@@ -41,7 +43,8 @@
           "end": {
             "line": 4,
             "column": 28
-          }
+          },
+          "source": "import.messed.css"
         }
       },
       {
@@ -55,7 +58,8 @@
           "end": {
             "line": 5,
             "column": 45
-          }
+          },
+          "source": "import.messed.css"
         }
       },
       {
@@ -69,7 +73,8 @@
           "end": {
             "line": 7,
             "column": 67
-          }
+          },
+          "source": "import.messed.css"
         }
       }
     ]
