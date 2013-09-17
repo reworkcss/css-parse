@@ -232,7 +232,7 @@ module.exports = function(css, options){
     var vals = [];
     var pos = position();
 
-    while (m = match(/^((\d+\.\d+|\.\d+|\d+)%{0,1}|[a-z]+)\s*/)) {
+    while (m = match(/^((\d+\.\d+|\.\d+|\d+)%?|[a-z]+)\s*/)) {
       vals.push(m[1]);
       match(/^,\s*/);
     }
