@@ -179,7 +179,7 @@ module.exports = function(css, options){
     var pos = position();
 
     // prop
-    var prop = match(/^(\*?[-\/\*\w]+)\s*/);
+    var prop = match(/^(\*?[-\/\*\w]+(\[[0-9a-z_-]+\])?)\s*/);
     if (!prop) return;
     prop = trim(prop[0]);
 
@@ -232,7 +232,7 @@ module.exports = function(css, options){
     var vals = [];
     var pos = position();
 
-    while (m = match(/^(from|to|\d+%|\.\d+%|\d+\.\d+%)\s*/)) {
+    while (m = match(/^((\d+\.\d+|\.\d+|\d+)%{0,1}|[a-z]+)\s*/)) {
       vals.push(m[1]);
       match(/^,\s*/);
     }
