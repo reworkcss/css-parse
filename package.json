@@ -17,5 +17,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/visionmedia/css-parse.git"
+  },
+  "scripts": {
+    "test": "make test"
   }
 }
