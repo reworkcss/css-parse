@@ -20,7 +20,8 @@
               "end": {
                 "line": 2,
                 "column": 13
-              }
+              },
+              "source": "rule.css"
             }
           }
         ],
@@ -32,7 +33,8 @@
           "end": {
             "line": 3,
             "column": 2
-          }
+          },
+          "source": "rule.css"
         }
       }
     ]
