@@ -24,7 +24,8 @@
                   "end": {
                     "line": 3,
                     "column": 21
-                  }
+                  },
+                  "source": "keyframes.advanced.css"
                 }
               }
             ],
@@ -36,7 +37,8 @@
               "end": {
                 "line": 4,
                 "column": 4
-              }
+              },
+              "source": "keyframes.advanced.css"
             }
           },
           {
@@ -57,7 +59,8 @@
                   "end": {
                     "line": 7,
                     "column": 17
-                  }
+                  },
+                  "source": "keyframes.advanced.css"
                 }
               }
             ],
@@ -69,7 +72,8 @@
               "end": {
                 "line": 8,
                 "column": 4
-              }
+              },
+              "source": "keyframes.advanced.css"
             }
           },
           {
@@ -90,7 +94,8 @@
                   "end": {
                     "line": 11,
                     "column": 15
-                  }
+                  },
+                  "source": "keyframes.advanced.css"
                 }
               }
             ],
@@ -102,7 +107,8 @@
               "end": {
                 "line": 12,
                 "column": 4
-              }
+              },
+              "source": "keyframes.advanced.css"
             }
           }
         ],
@@ -114,7 +120,8 @@
           "end": {
             "line": 13,
             "column": 2
-          }
+          },
+          "source": "keyframes.advanced.css"
         }
       }
     ]
