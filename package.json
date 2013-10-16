@@ -11,7 +11,9 @@
   "license": "MIT",
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "matcha": "~0.4.0",
+    "bytes": "~0.2.1"
   },
   "main": "index",
   "repository": {
@@ -20,5 +22,8 @@
   },
   "scripts": {
     "test": "make test"
-  }
+  },
+  "files": [
+    "index.js"
+  ]
 }
