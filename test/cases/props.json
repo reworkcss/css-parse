@@ -20,7 +20,8 @@
               "end": {
                 "line": 3,
                 "column": 13
-              }
+              },
+              "source": "props.css"
             }
           },
           {
@@ -35,7 +36,8 @@
               "end": {
                 "line": 4,
                 "column": 32
-              }
+              },
+              "source": "props.css"
             }
           },
           {
@@ -50,7 +52,8 @@
               "end": {
                 "line": 5,
                 "column": 19
-              }
+              },
+              "source": "props.css"
             }
           }
         ],
@@ -62,7 +65,8 @@
           "end": {
             "line": 6,
             "column": 2
-          }
+          },
+          "source": "props.css"
         }
       }
     ]
