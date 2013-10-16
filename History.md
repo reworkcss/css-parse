@@ -1,4 +1,12 @@
 
+1.6.0 / 2013-10-16 
+==================
+
+ * add @host support. Closes #54
+ * add benchmarks
+ * add `source` property to `position`
+ * change: relax keyframe selectors and property names
+
 1.5.3 / 2013-09-10 
 ==================
 
