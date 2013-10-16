@@ -307,6 +307,28 @@ module.exports = function(css, options){
   }
 
   /**
+   * Parse host.
+   */
+
+  function athost() {
+    var pos = position();
+    var m = match(/^@host */);
+
+    if (!m) return;
+
+    if (!open()) return error("@host missing '{'");
+
+    var style = comments().concat(rules());
+
+    if (!close()) return error("@host missing '}'");
+
+    return pos({
+      type: 'host',
+      rules: style
+    });
+  }
+
+  /**
    * Parse media.
    */
 
@@ -435,7 +457,8 @@ module.exports = function(css, options){
       || atcharset()
       || atnamespace()
       || atdocument()
-      || atpage();
+      || atpage()
+      || athost();
   }
 
   /**
