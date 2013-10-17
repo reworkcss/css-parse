@@ -1,5 +1,4 @@
-
-# css-parse
+# css-parse [![Build Status](https://travis-ci.org/visionmedia/css-parse.png)](https://travis-ci.org/visionmedia/css-parse)
 
   JavaScript CSS parser for nodejs and the browser.
 
