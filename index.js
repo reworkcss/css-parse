@@ -450,6 +450,8 @@ module.exports = function(css, options){
    */
 
   function atrule() {
+    if (css[0] != '@') return;
+
     return atkeyframes()
       || atmedia()
       || atsupports()
@@ -487,5 +489,5 @@ module.exports = function(css, options){
  */
 
 function trim(str) {
-  return (str || '').replace(/^\s+|\s+$/g, '');
+  return str ? str.replace(/^\s+|\s+$/g, '') : '';
 }
