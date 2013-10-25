@@ -1,6 +1,6 @@
 /* 1 */
 
-body { /* 2 */
+head, /* footer, */body/*, nav */ { /* 2 */
   /* 3 */
   /**/foo: 'bar';
   /* 4 */

@@ -169,7 +169,9 @@ module.exports = function(css, options){
   function selector() {
     var m = match(/^([^{]+)/);
     if (!m) return;
-    return trim(m[0]).split(/\s*,\s*/);
+    /* @fix Remove all comments form selectors 
+     * http://ostermiller.org/findcomment.html */
+    return trim(m[0]).replace(/\/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*\/+/g, '').split(/\s*,\s*/);
   }
 
   /**
