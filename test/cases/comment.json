@@ -20,6 +20,7 @@
       {
         "type": "rule",
         "selectors": [
+          "head",
           "body"
         ],
         "declarations": [
@@ -29,11 +30,11 @@
             "position": {
               "start": {
                 "line": 3,
-                "column": 8
+                "column": 37
               },
               "end": {
                 "line": 3,
-                "column": 15
+                "column": 44
               },
               "source": "comment.css"
             }
