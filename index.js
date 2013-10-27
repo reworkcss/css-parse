@@ -1,4 +1,3 @@
-
 module.exports = function(css, options){
   options = options || {};
 
@@ -169,7 +168,7 @@ module.exports = function(css, options){
   function selector() {
     var m = match(/^([^{]+)/);
     if (!m) return;
-    /* @fix Remove all comments form selectors 
+    /* @fix Remove all comments from selectors 
      * http://ostermiller.org/findcomment.html */
     return trim(m[0]).replace(/\/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*\/+/g, '').split(/\s*,\s*/);
   }
