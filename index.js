@@ -443,7 +443,9 @@ module.exports = function(css, options){
 
   function rule() {
     var pos = position();
-    var sel = selector() || [];
+    var sel = selector();
+    if (!sel) return error("Selector missing");
+    
     comments();
 
     return pos({
