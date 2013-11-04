@@ -55,6 +55,7 @@ module.exports = function(css, options){
 
   function error(msg) {
     var err = new Error(msg + ' near line ' + lineno + ':' + column);
+    err.filename = options.source;
     err.line = lineno;
     err.column = column;
     err.source = css;
