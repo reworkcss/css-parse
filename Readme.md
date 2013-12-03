@@ -2,6 +2,28 @@
 
   JavaScript CSS parser for nodejs and the browser.
 
+## Installation
+
+  $ npm install css-parse
+
+## Usage
+
+````javascript
+var parse = require('css-parse');
+
+// CSS input string
+var css = "body { \n background-color: #fff;\n }";
+
+var output_obj = parse(css);
+
+// Position and Source parameters
+var output_obj_pos = parse(css, { position: true, source: 'file.css' });
+
+// Print parsed object as CSS string
+console.log(JSON.stringify(output_obj, null, 2));
+
+````
+
 ## Example
 
 css:
@@ -109,6 +131,11 @@ on `node.position.source`.
 ## Performance
 
   Parsed 15,000 lines of CSS (2mb) in 40ms on my macbook air.
+
+## Related
+ 
+  [css-stringify](https://github.com/visionmedia/css-stringify "CSS-Stringify")  
+  [css-value](https://github.com/visionmedia/css-value "CSS-Value")  
 
 ## License
 
