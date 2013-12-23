@@ -125,6 +125,47 @@ parse tree with `.position` enabled:
 }
 ```
 
+set `.nested` to allow rule nesting:
+
+```css
+div {
+  & a {
+    color: blue;
+  }
+}
+```
+
+```json
+{
+  "type": "stylesheet",
+  "stylesheet": {
+    "rules": [
+      {
+        "type": "rule",
+        "selectors": [
+          "div"
+        ],
+        "declarations": [
+          {
+            "type": "nested",
+            "selectors": [
+              "& a"
+            ],
+            "declarations": [
+              {
+                "type": "declaration",
+                "property": "color",
+                "value": "blue"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
 If you also pass in `source: 'path/to/original.css'`, that will be set
 on `node.position.source`.
 
@@ -133,9 +174,9 @@ on `node.position.source`.
   Parsed 15,000 lines of CSS (2mb) in 40ms on my macbook air.
 
 ## Related
- 
-  [css-stringify](https://github.com/visionmedia/css-stringify "CSS-Stringify")  
-  [css-value](https://github.com/visionmedia/css-value "CSS-Value")  
+
+  [css-stringify](https://github.com/visionmedia/css-stringify "CSS-Stringify")
+  [css-value](https://github.com/visionmedia/css-value "CSS-Value")
 
 ## License
 
