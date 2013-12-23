@@ -178,7 +178,7 @@ module.exports = function(css, options){
    * Parse nested rule.
    */
   function nested() {
-    if (!css.match(/^[^{}]+\s+{/)) return;
+    if (options.nested !== true || !css.match(/^[^{}]+\s+{/)) return;
 
     var pos = position();
     var sel = selector();
