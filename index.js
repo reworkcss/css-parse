@@ -170,7 +170,28 @@ module.exports = function(css, options){
   function selector() {
     var m = match(/^([^{]+)/);
     if (!m) return;
+
     return trim(m[0]).split(/\s*,\s*/);
+  }
+
+  /**
+   * Parse nested rule.
+   */
+  function nested() {
+    if (!css.match(/^[^{}]+\s+{/)) return;
+
+    var pos = position();
+    var sel = selector();
+
+    sel.map(function (selNested) {
+      if (selNested.charAt(0) !== '&') return error("nested selector missing '&' prefix");
+    });
+
+    return pos({
+      type: 'nested',
+      selectors: sel,
+      declarations: declarations()
+    });
   }
 
   /**
@@ -178,6 +199,9 @@ module.exports = function(css, options){
    */
 
   function declaration() {
+    var nest = nested();
+    if (nest) return nest;
+
     var pos = position();
 
     // prop

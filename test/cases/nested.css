@@ -1,0 +1,11 @@
+div {
+  & a, & span.link {
+    color: black;
+  }
+
+  & a {
+    &:hover {
+      color: blue;
+    }
+  }
+}
