@@ -1,3 +1,7 @@
+// http://www.w3.org/TR/CSS21/grammar.html
+// https://github.com/visionmedia/css-parse/pull/49#issuecomment-30088027
+var commentre = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g
+
 module.exports = function(css, options){
   options = options || {};
   options.position = options.position === false ? false : true;
@@ -201,8 +205,8 @@ module.exports = function(css, options){
 
     var ret = pos({
       type: 'declaration',
-      property: prop,
-      value: trim(val[0])
+      property: prop.replace(commentre, ''),
+      value: trim(val[0]).replace(commentre, '')
     });
 
     // ;
