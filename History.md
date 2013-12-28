@@ -1,3 +1,9 @@
+2.0.0 /
+==================
+
+ * rename source to filename
+   - `source` is now the CSS string
+   - `filename` is now the optional filename
 
 1.7.0 / 2013-12-21
 ==================

@@ -21,7 +21,7 @@
                 "line": 2,
                 "column": 19
               },
-              "source": "colon-space.css"
+              "filename": "colon-space.css"
             }
           },
           {
@@ -37,7 +37,7 @@
                 "line": 3,
                 "column": 16
               },
-              "source": "colon-space.css"
+              "filename": "colon-space.css"
             }
           }
         ],
@@ -50,7 +50,7 @@
             "line": 4,
             "column": 2
           },
-          "source": "colon-space.css"
+          "filename": "colon-space.css"
         }
       }
     ]

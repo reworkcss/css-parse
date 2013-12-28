@@ -21,7 +21,7 @@
                 "line": 2,
                 "column": 55
               },
-              "source": "quoted.css"
+              "filename": "quoted.css"
             }
           }
         ],
@@ -34,7 +34,7 @@
             "line": 3,
             "column": 2
           },
-          "source": "quoted.css"
+          "filename": "quoted.css"
         }
       }
     ]

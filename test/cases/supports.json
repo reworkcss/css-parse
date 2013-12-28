@@ -18,7 +18,7 @@
                 "line": 2,
                 "column": 19
               },
-              "source": "supports.css"
+              "filename": "supports.css"
             }
           },
           {
@@ -39,7 +39,7 @@
                     "line": 4,
                     "column": 22
                   },
-                  "source": "supports.css"
+                  "filename": "supports.css"
                 }
               },
               {
@@ -55,7 +55,7 @@
                     "line": 5,
                     "column": 17
                   },
-                  "source": "supports.css"
+                  "filename": "supports.css"
                 }
               },
               {
@@ -71,7 +71,7 @@
                     "line": 6,
                     "column": 18
                   },
-                  "source": "supports.css"
+                  "filename": "supports.css"
                 }
               }
             ],
@@ -84,7 +84,7 @@
                 "line": 7,
                 "column": 4
               },
-              "source": "supports.css"
+              "filename": "supports.css"
             }
           }
         ],
@@ -97,7 +97,7 @@
             "line": 8,
             "column": 2
           },
-          "source": "supports.css"
+          "filename": "supports.css"
         }
       }
     ]

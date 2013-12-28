@@ -14,7 +14,7 @@
             "line": 2,
             "column": 36
           },
-          "source": "import.css"
+          "filename": "import.css"
         }
       },
       {
@@ -29,7 +29,7 @@
             "line": 3,
             "column": 42
           },
-          "source": "import.css"
+          "filename": "import.css"
         }
       },
       {
@@ -44,7 +44,7 @@
             "line": 4,
             "column": 22
           },
-          "source": "import.css"
+          "filename": "import.css"
         }
       },
       {
@@ -59,7 +59,7 @@
             "line": 5,
             "column": 41
           },
-          "source": "import.css"
+          "filename": "import.css"
         }
       },
       {
@@ -74,7 +74,7 @@
             "line": 6,
             "column": 65
           },
-          "source": "import.css"
+          "filename": "import.css"
         }
       }
     ]

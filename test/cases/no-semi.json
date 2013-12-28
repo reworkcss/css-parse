@@ -21,7 +21,7 @@
                 "line": 3,
                 "column": 13
               },
-              "source": "no-semi.css"
+              "filename": "no-semi.css"
             }
           },
           {
@@ -37,7 +37,7 @@
                 "line": 5,
                 "column": 1
               },
-              "source": "no-semi.css"
+              "filename": "no-semi.css"
             }
           }
         ],
@@ -50,7 +50,7 @@
             "line": 5,
             "column": 2
           },
-          "source": "no-semi.css"
+          "filename": "no-semi.css"
         }
       }
     ]

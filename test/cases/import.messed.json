@@ -14,7 +14,7 @@
             "line": 2,
             "column": 39
           },
-          "source": "import.messed.css"
+          "filename": "import.messed.css"
         }
       },
       {
@@ -29,7 +29,7 @@
             "line": 3,
             "column": 44
           },
-          "source": "import.messed.css"
+          "filename": "import.messed.css"
         }
       },
       {
@@ -44,7 +44,7 @@
             "line": 4,
             "column": 28
           },
-          "source": "import.messed.css"
+          "filename": "import.messed.css"
         }
       },
       {
@@ -59,7 +59,7 @@
             "line": 5,
             "column": 45
           },
-          "source": "import.messed.css"
+          "filename": "import.messed.css"
         }
       },
       {
@@ -74,7 +74,7 @@
             "line": 7,
             "column": 67
           },
-          "source": "import.messed.css"
+          "filename": "import.messed.css"
         }
       }
     ]
