@@ -6,6 +6,7 @@
    - `filename` is now the optional filename
  * changed default `options.position` value to `true`
  * remove comments from properties and values
+ * asserts when selectors are missing
 
 1.7.0 / 2013-12-21
 ==================

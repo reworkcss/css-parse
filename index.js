@@ -109,7 +109,7 @@ module.exports = function(css, options){
     var rules = [];
     whitespace();
     comments(rules);
-    while (css.charAt(0) != '}' && (node = atrule() || rule())) {
+    while (css.length && css.charAt(0) != '}' && (node = atrule() || rule())) {
       rules.push(node);
       comments(rules);
     }
@@ -483,7 +483,7 @@ module.exports = function(css, options){
     var pos = position();
     var sel = selector();
 
-    if (!sel) return;
+    if (!sel) return error('selector missing');
     comments();
 
     return pos({

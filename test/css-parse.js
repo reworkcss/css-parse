@@ -3,11 +3,12 @@
  * Module dependencies.
  */
 
-var parse = require('..')
-  , fs = require('fs')
-  , path = require('path')
-  , read = fs.readFileSync
-  , readdir = fs.readdirSync;
+var parse = require('..');
+var fs = require('fs');
+var path = require('path');
+var read = fs.readFileSync;
+var readdir = fs.readdirSync;
+var assert = require('assert');
 
 describe('parse(str)', function(){
   readdir('test/cases').forEach(function(file){
@@ -34,4 +35,14 @@ describe('parse(str)', function(){
     position.filename.should.equal('booty.css');
     position.source.should.equal(css);
   });
+
+  it('should throw when a selector is missing', function(){
+    assert.throws(function(){
+      parse('{size: large}');
+    });
+
+    assert.throws(function(){
+      parse('b { color: red; }\n{ color: green; }\na {color: blue; }');
+    });
+  })
 })
