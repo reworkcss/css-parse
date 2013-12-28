@@ -1,5 +1,6 @@
 module.exports = function(css, options){
   options = options || {};
+  options.position = options.position === false ? false : true;
 
   /**
    * Positional.

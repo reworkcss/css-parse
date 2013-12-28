@@ -24,6 +24,26 @@ console.log(JSON.stringify(output_obj, null, 2));
 
 ````
 
+## API
+
+### var ast = parse(css, [options])
+
+`options`:
+
+- `filename` - recommended for debugging
+- `position` - `true` by default.
+
+### Errors
+
+Errors will have `err.position` where `position` is:
+
+- `start` - start line and column numbers
+- `end` - end line and column numbers
+- `filename` - filename if passed to options
+- `source` - source CSS string
+
+If you create any errors in plugins such as in [rework](https://github.com/visionmedia/rework), you __must__ set the `position` as well for consistency.
+
 ## Example
 
 css:

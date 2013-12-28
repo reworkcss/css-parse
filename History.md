@@ -4,6 +4,7 @@
  * rename source to filename
    - `source` is now the CSS string
    - `filename` is now the optional filename
+ * changed default `options.position` value to `true`
 
 1.7.0 / 2013-12-21
 ==================
