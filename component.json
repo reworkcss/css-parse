@@ -1,6 +1,6 @@
 {
   "name": "css-parse",
-  "repo": "visionmedia/css-parse",
+  "repo": "reworkcss/css-parse",
   "version": "1.7.0",
   "description": "CSS parser",
   "keywords": ["css", "parser", "stylesheet"],
