@@ -1,6 +1,6 @@
 {
   "name": "css-parse",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "CSS parser",
   "keywords": [
     "css",
@@ -15,10 +15,9 @@
     "matcha": "~0.4.0",
     "bytes": "~0.2.1"
   },
-  "main": "index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/visionmedia/css-parse.git"
+    "url": "https://github.com/reworkcss/css-parse.git"
   },
   "scripts": {
     "test": "make test"

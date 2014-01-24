@@ -1,4 +1,4 @@
-# css-parse [![Build Status](https://travis-ci.org/visionmedia/css-parse.png)](https://travis-ci.org/visionmedia/css-parse)
+# css-parse [![Build Status](https://travis-ci.org/reworkcss/css-parse.png)](https://travis-ci.org/reworkcss/css-parse)
 
   JavaScript CSS parser for nodejs and the browser.
 
@@ -16,8 +16,8 @@ var css = "body { \n background-color: #fff;\n }";
 
 var output_obj = parse(css);
 
-// Position and Filename parameters
-var output_obj_pos = parse(css, { position: true, filename: 'file.css' });
+// Filename parameter for source mapping
+var output_obj_pos = parse(css, { filename: 'file.css' });
 
 // Print parsed object as CSS string
 console.log(JSON.stringify(output_obj, null, 2));
@@ -30,7 +30,7 @@ console.log(JSON.stringify(output_obj, null, 2));
 
 `options`:
 
-- `filename` - recommended for debugging
+- `filename` - recommended for debugging.
 - `position` - `true` by default.
 
 ### Errors
@@ -42,7 +42,7 @@ Errors will have `err.position` where `position` is:
 - `filename` - filename if passed to options
 - `source` - source CSS string
 
-If you create any errors in plugins such as in [rework](https://github.com/visionmedia/rework), you __must__ set the `position` as well for consistency.
+If you create any errors in plugins such as in [rework](https://github.com/reworkcss/rework), you __must__ set the `position` as well for consistency.
 
 ## Example
 
