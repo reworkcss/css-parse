@@ -45,4 +45,19 @@ describe('parse(str)', function(){
       parse('b { color: red; }\n{ color: green; }\na {color: blue; }');
     });
   })
+
+  it('should throw when a broken comment is found', function () {
+    assert.throws(function(){
+      parse('thing { color: red; } /* b { color: blue; }');
+    });
+
+    assert.throws(function(){
+      parse('/*');
+    });
+
+    /* Nested comments should be fine */
+    assert.doesNotThrow(function(){
+      parse('/* /* */');
+    });
+  })
 })
