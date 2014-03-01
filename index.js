@@ -37,7 +37,7 @@ module.exports = function(css, options){
       node.position = new Position(start);
       whitespace();
       return node;
-    }
+    };
   }
 
   function Position(start) {
@@ -428,37 +428,35 @@ module.exports = function(css, options){
    * Parse import
    */
 
-  function atimport() {
-    return _atrule('import');
-  }
+  var atimport = _compileAtrule('import');
 
   /**
    * Parse charset
    */
 
-  function atcharset() {
-    return _atrule('charset');
-  }
+  var atcharset = _compileAtrule('charset');
 
   /**
    * Parse namespace
    */
 
-  function atnamespace() {
-    return _atrule('namespace')
-  }
+  var atnamespace = _compileAtrule('namespace');
 
   /**
    * Parse non-block at-rules
    */
 
-  function _atrule(name) {
-    var pos = position();
-    var m = match(new RegExp('^@' + name + ' *([^;\\n]+);'));
-    if (!m) return;
-    var ret = { type: name };
-    ret[name] = trim(m[1]);
-    return pos(ret);
+
+  function _compileAtrule(name) {
+    var re = new RegExp('^@' + name + ' *([^;\\n]+);');
+    return function() {
+      var pos = position();
+      var m = match(re);
+      if (!m) return;
+      var ret = { type: name };
+      ret[name] = m[1].trim();
+      return pos(ret);
+    }
   }
 
   /**
