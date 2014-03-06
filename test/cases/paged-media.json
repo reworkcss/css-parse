@@ -14,7 +14,7 @@
             "line": 1,
             "column": 16
           },
-          "filename": "paged-media.css"
+          "source": "paged-media.css"
         }
       },
       {
@@ -36,7 +36,7 @@
                 "line": 3,
                 "column": 19
               },
-              "filename": "paged-media.css"
+              "source": "paged-media.css"
             }
           },
           {
@@ -52,7 +52,7 @@
                 "line": 4,
                 "column": 15
               },
-              "filename": "paged-media.css"
+              "source": "paged-media.css"
             }
           }
         ],
@@ -65,7 +65,7 @@
             "line": 5,
             "column": 2
           },
-          "filename": "paged-media.css"
+          "source": "paged-media.css"
         }
       },
       {
@@ -85,7 +85,7 @@
                 "line": 8,
                 "column": 18
               },
-              "filename": "paged-media.css"
+              "source": "paged-media.css"
             }
           }
         ],
@@ -98,7 +98,7 @@
             "line": 9,
             "column": 2
           },
-          "filename": "paged-media.css"
+          "source": "paged-media.css"
         }
       }
     ]

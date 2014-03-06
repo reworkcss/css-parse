@@ -21,7 +21,7 @@
                 "line": 2,
                 "column": 13
               },
-              "filename": "rule.css"
+              "source": "rule.css"
             }
           }
         ],
@@ -34,7 +34,7 @@
             "line": 3,
             "column": 2
           },
-          "filename": "rule.css"
+          "source": "rule.css"
         }
       }
     ]

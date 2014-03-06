@@ -25,7 +25,7 @@
                     "line": 3,
                     "column": 21
                   },
-                  "filename": "keyframes.advanced.css"
+                  "source": "keyframes.advanced.css"
                 }
               }
             ],
@@ -38,7 +38,7 @@
                 "line": 4,
                 "column": 4
               },
-              "filename": "keyframes.advanced.css"
+              "source": "keyframes.advanced.css"
             }
           },
           {
@@ -60,7 +60,7 @@
                     "line": 7,
                     "column": 17
                   },
-                  "filename": "keyframes.advanced.css"
+                  "source": "keyframes.advanced.css"
                 }
               }
             ],
@@ -73,7 +73,7 @@
                 "line": 8,
                 "column": 4
               },
-              "filename": "keyframes.advanced.css"
+              "source": "keyframes.advanced.css"
             }
           },
           {
@@ -95,7 +95,7 @@
                     "line": 11,
                     "column": 15
                   },
-                  "filename": "keyframes.advanced.css"
+                  "source": "keyframes.advanced.css"
                 }
               }
             ],
@@ -108,7 +108,7 @@
                 "line": 12,
                 "column": 4
               },
-              "filename": "keyframes.advanced.css"
+              "source": "keyframes.advanced.css"
             }
           }
         ],
@@ -121,7 +121,7 @@
             "line": 13,
             "column": 2
           },
-          "filename": "keyframes.advanced.css"
+          "source": "keyframes.advanced.css"
         }
       }
     ]

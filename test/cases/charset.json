@@ -14,7 +14,7 @@
             "line": 1,
             "column": 18
           },
-          "filename": "charset.css"
+          "source": "charset.css"
         }
       },
       {
@@ -29,7 +29,7 @@
             "line": 1,
             "column": 82
           },
-          "filename": "charset.css"
+          "source": "charset.css"
         }
       },
       {
@@ -44,7 +44,7 @@
             "line": 2,
             "column": 24
           },
-          "filename": "charset.css"
+          "source": "charset.css"
         }
       },
       {
@@ -59,7 +59,7 @@
             "line": 2,
             "column": 122
           },
-          "filename": "charset.css"
+          "source": "charset.css"
         }
       }
     ]

@@ -29,28 +29,20 @@ module.exports = function(css, options){
    */
 
   function position() {
+    var start = { line: lineno, column: column };
     if (!options.position) return positionNoop;
 
-    var start = { line: lineno, column: column };
-
     return function(node){
-      node.position = new Position(start);
+      node.position = {
+        start: start,
+        end: { line: lineno, column: column },
+        source: options.source
+      };
+
       whitespace();
       return node;
     };
   }
-
-  function Position(start) {
-    this.start = start;
-    this.end = { line: lineno, column: column };
-    this.filename = options.filename;
-  }
-
-  /**
-   * Non-enumerable source string.
-   */
-
-  Position.prototype.source = css;
 
   /**
    * Return `node`.
@@ -65,9 +57,12 @@ module.exports = function(css, options){
    * Error `msg`.
    */
 
-  function error(msg, start) {
+  function error(msg) {
     var err = new Error(msg + ' near line ' + lineno + ':' + column);
-    err.position = new Position(start);
+    err.filename = options.source;
+    err.line = lineno;
+    err.column = column;
+    err.source = css;
     throw err;
   }
 
@@ -183,7 +178,7 @@ module.exports = function(css, options){
   function selector() {
     var m = match(/^([^{]+)/);
     if (!m) return;
-    /* @fix Remove all comments from selectors
+    /* @fix Remove all comments from selectors 
      * http://ostermiller.org/findcomment.html */
     return trim(m[0]).replace(/\/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*\/+/g, '').split(/\s*,\s*/);
   }

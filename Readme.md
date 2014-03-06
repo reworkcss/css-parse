@@ -16,8 +16,8 @@ var css = "body { \n background-color: #fff;\n }";
 
 var output_obj = parse(css);
 
-// Filename parameter for source mapping
-var output_obj_pos = parse(css, { filename: 'file.css' });
+// Source parameter to specify source file name for source maps
+var output_obj_pos = parse(css, { source: 'file.css' });
 
 // Print parsed object as CSS string
 console.log(JSON.stringify(output_obj, null, 2));
@@ -145,17 +145,17 @@ parse tree with `.position` enabled:
 }
 ```
 
-If you also pass in `filename: 'path/to/original.css'`, that will be set
-on `node.position.filename`.
+If you also pass in `source: 'path/to/original.css'`, that will be set
+on `node.position.source`.
 
 ## Performance
 
   Parsed 15,000 lines of CSS (2mb) in 40ms on my macbook air.
 
 ## Related
-
-  [css-stringify](https://github.com/visionmedia/css-stringify "CSS-Stringify")
-  [css-value](https://github.com/visionmedia/css-value "CSS-Value")
+ 
+  [css-stringify](https://github.com/visionmedia/css-stringify "CSS-Stringify")  
+  [css-value](https://github.com/visionmedia/css-value "CSS-Value")  
 
 ## License
 

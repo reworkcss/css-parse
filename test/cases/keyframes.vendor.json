@@ -26,7 +26,7 @@
                     "line": 2,
                     "column": 21
                   },
-                  "filename": "keyframes.vendor.css"
+                  "source": "keyframes.vendor.css"
                 }
               }
             ],
@@ -39,7 +39,7 @@
                 "line": 2,
                 "column": 22
               },
-              "filename": "keyframes.vendor.css"
+              "source": "keyframes.vendor.css"
             }
           },
           {
@@ -61,7 +61,7 @@
                     "line": 3,
                     "column": 19
                   },
-                  "filename": "keyframes.vendor.css"
+                  "source": "keyframes.vendor.css"
                 }
               }
             ],
@@ -74,7 +74,7 @@
                 "line": 3,
                 "column": 20
               },
-              "filename": "keyframes.vendor.css"
+              "source": "keyframes.vendor.css"
             }
           }
         ],
@@ -87,7 +87,7 @@
             "line": 4,
             "column": 2
           },
-          "filename": "keyframes.vendor.css"
+          "source": "keyframes.vendor.css"
         }
       }
     ]

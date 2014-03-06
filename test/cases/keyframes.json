@@ -18,7 +18,7 @@
                 "line": 2,
                 "column": 19
               },
-              "filename": "keyframes.css"
+              "source": "keyframes.css"
             }
           },
           {
@@ -39,7 +39,7 @@
                     "line": 4,
                     "column": 22
                   },
-                  "filename": "keyframes.css"
+                  "source": "keyframes.css"
                 }
               },
               {
@@ -55,7 +55,7 @@
                     "line": 5,
                     "column": 15
                   },
-                  "filename": "keyframes.css"
+                  "source": "keyframes.css"
                 }
               }
             ],
@@ -68,7 +68,7 @@
                 "line": 6,
                 "column": 4
               },
-              "filename": "keyframes.css"
+              "source": "keyframes.css"
             }
           },
           {
@@ -83,7 +83,7 @@
                 "line": 8,
                 "column": 17
               },
-              "filename": "keyframes.css"
+              "source": "keyframes.css"
             }
           },
           {
@@ -104,7 +104,7 @@
                     "line": 10,
                     "column": 20
                   },
-                  "filename": "keyframes.css"
+                  "source": "keyframes.css"
                 }
               },
               {
@@ -120,7 +120,7 @@
                     "line": 11,
                     "column": 15
                   },
-                  "filename": "keyframes.css"
+                  "source": "keyframes.css"
                 }
               }
             ],
@@ -133,7 +133,7 @@
                 "line": 12,
                 "column": 4
               },
-              "filename": "keyframes.css"
+              "source": "keyframes.css"
             }
           }
         ],
@@ -146,7 +146,7 @@
             "line": 13,
             "column": 2
           },
-          "filename": "keyframes.css"
+          "source": "keyframes.css"
         }
       }
     ]
