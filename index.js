@@ -66,6 +66,9 @@ module.exports = function(css, options){
    */
 
   function error(msg, start) {
+    if(options.silent === true){
+      return false;
+    }
     var err = new Error(msg + ' near line ' + lineno + ':' + column);
     err.position = new Position(start);
     throw err;
@@ -110,9 +113,11 @@ module.exports = function(css, options){
     whitespace();
     comments(rules);
     while (css.length && css.charAt(0) != '}' && (node = atrule() || rule())) {
-      rules.push(node);
-      comments(rules);
-    }
+      if(node !== false){
+        rules.push(node);
+        comments(rules);
+      }
+     }
     return rules;
   }
 
@@ -232,8 +237,10 @@ module.exports = function(css, options){
     // declarations
     var decl;
     while (decl = declaration()) {
+      if(decl !== false){
       decls.push(decl);
       comments(decls);
+    }
     }
 
     if (!close()) return error("missing '}'");
@@ -385,8 +392,10 @@ module.exports = function(css, options){
     // declarations
     var decl;
     while (decl = declaration()) {
-      decls.push(decl);
-      decls = decls.concat(comments());
+      if(decl !== false){
+        decls.push(decl);
+        decls = decls.concat(comments());
+      }
     }
 
     if (!close()) return error("@page missing '}'");
