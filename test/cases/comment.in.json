@@ -21,7 +21,7 @@
                 "line": 2,
                 "column": 20
               },
-              "filename": "comment.in.css"
+              "source": "comment.in.css"
             }
           },
           {
@@ -37,7 +37,7 @@
                 "line": 3,
                 "column": 51
               },
-              "filename": "comment.in.css"
+              "source": "comment.in.css"
             }
           }
         ],
@@ -50,7 +50,7 @@
             "line": 4,
             "column": 2
           },
-          "filename": "comment.in.css"
+          "source": "comment.in.css"
         }
       }
     ]

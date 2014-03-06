@@ -26,14 +26,13 @@ describe('parse(str)', function(){
   it('should save the filename and source', function(){
     var css = 'booty {\n  size: large;\n}\n';
     var ast = parse(css, {
-      filename: 'booty.css'
+      source: 'booty.css'
     });
 
     var position = ast.stylesheet.rules[0].position
     position.start.should.be.ok;
     position.end.should.be.ok;
-    position.filename.should.equal('booty.css');
-    position.source.should.equal(css);
+    position.source.should.equal('booty.css');
   });
 
   it('should throw when a selector is missing', function(){
