@@ -33,6 +33,7 @@ describe('parse(str)', function(){
     position.start.should.be.ok;
     position.end.should.be.ok;
     position.source.should.equal('booty.css');
+    position.content.should.equal(css);
   });
 
   it('should throw when a selector is missing', function(){

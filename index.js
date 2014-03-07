@@ -33,16 +33,27 @@ module.exports = function(css, options){
     if (!options.position) return positionNoop;
 
     return function(node){
-      node.position = {
-        start: start,
-        end: { line: lineno, column: column },
-        source: options.source
-      };
-
+      node.position = new Position(start);
       whitespace();
       return node;
     };
   }
+
+  /**
+   * Store position information for a node
+   */
+
+  function Position(start) {
+    this.start = start;
+    this.end = { line: lineno, column: column };
+    this.source = options.source;
+  }
+
+  /**
+   * Non-enumerable source string
+   */
+
+  Position.prototype.content = css;
 
   /**
    * Return `node`.

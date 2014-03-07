@@ -4,6 +4,7 @@
  * changed default `options.position` value to `true`
  * remove comments from properties and values
  * asserts when selectors are missing
+ * added `node.position.content` property
 
 1.7.0 / 2013-12-21
 ==================

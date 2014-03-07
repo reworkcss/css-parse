@@ -144,8 +144,9 @@ parse tree with `.position` enabled:
 }
 ```
 
-If you also pass in `source: 'path/to/original.css'`, that will be set
-on `node.position.source`.
+`node.position.content` is set on each node to the full source string. If you
+also pass in `source: 'path/to/original.css'`, that will be set on
+`node.position.source`.
 
 ## Performance
 
