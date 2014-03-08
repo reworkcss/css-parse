@@ -14,7 +14,7 @@
             "line": 1,
             "column": 8
           },
-          "filename": "comment.css"
+          "source": "comment.css"
         }
       },
       {
@@ -36,7 +36,7 @@
                 "line": 3,
                 "column": 44
               },
-              "filename": "comment.css"
+              "source": "comment.css"
             }
           },
           {
@@ -51,7 +51,7 @@
                 "line": 4,
                 "column": 10
               },
-              "filename": "comment.css"
+              "source": "comment.css"
             }
           },
           {
@@ -66,7 +66,7 @@
                 "line": 5,
                 "column": 7
               },
-              "filename": "comment.css"
+              "source": "comment.css"
             }
           },
           {
@@ -82,7 +82,7 @@
                 "line": 5,
                 "column": 17
               },
-              "filename": "comment.css"
+              "source": "comment.css"
             }
           },
           {
@@ -97,7 +97,7 @@
                 "line": 6,
                 "column": 10
               },
-              "filename": "comment.css"
+              "source": "comment.css"
             }
           }
         ],
@@ -110,7 +110,7 @@
             "line": 7,
             "column": 2
           },
-          "filename": "comment.css"
+          "source": "comment.css"
         }
       },
       {
@@ -125,7 +125,7 @@
             "line": 7,
             "column": 10
           },
-          "filename": "comment.css"
+          "source": "comment.css"
         }
       },
       {
@@ -140,7 +140,7 @@
             "line": 9,
             "column": 8
           },
-          "filename": "comment.css"
+          "source": "comment.css"
         }
       }
     ]

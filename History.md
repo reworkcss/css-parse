@@ -1,13 +1,10 @@
-
 2.0.0 / 2014-01-24
 ==================
 
- * rename source to filename
-   - `source` is now the CSS string
-   - `filename` is now the optional filename
  * changed default `options.position` value to `true`
  * remove comments from properties and values
  * asserts when selectors are missing
+ * added `node.position.content` property
 
 1.7.0 / 2013-12-21
 ==================

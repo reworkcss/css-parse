@@ -24,7 +24,7 @@
                     "line": 3,
                     "column": 19
                   },
-                  "filename": "host.css"
+                  "source": "host.css"
                 }
               }
             ],
@@ -37,7 +37,7 @@
                 "line": 4,
                 "column": 4
               },
-              "filename": "host.css"
+              "source": "host.css"
             }
           }
         ],
@@ -50,7 +50,7 @@
             "line": 5,
             "column": 2
           },
-          "filename": "host.css"
+          "source": "host.css"
         }
       }
     ]
