@@ -189,7 +189,7 @@ module.exports = function(css, options){
   function selector() {
     var m = match(/^([^{]+)/);
     if (!m) return;
-    /* @fix Remove all comments from selectors 
+    /* @fix Remove all comments from selectors
      * http://ostermiller.org/findcomment.html */
     return trim(m[0]).replace(/\/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*\/+/g, '').split(/\s*,\s*/);
   }
@@ -431,6 +431,33 @@ module.exports = function(css, options){
   }
 
   /**
+   * Parse font-face.
+   */
+
+  function atfontface() {
+    var pos = position();
+    var m = match(/^@font-face */);
+    if (!m) return;
+
+    if (!open()) return error("@font-face missing '{'");
+    var decls = comments();
+
+    // declarations
+    var decl;
+    while (decl = declaration()) {
+      decls.push(decl);
+      decls = decls.concat(comments());
+    }
+
+    if (!close()) return error("@font-face missing '}'");
+
+    return pos({
+      type: 'font-face',
+      declarations: decls
+    });
+  }
+
+  /**
    * Parse import
    */
 
@@ -480,7 +507,8 @@ module.exports = function(css, options){
       || atnamespace()
       || atdocument()
       || atpage()
-      || athost();
+      || athost()
+      || atfontface();
   }
 
   /**
