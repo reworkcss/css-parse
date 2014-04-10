@@ -21,7 +21,7 @@
                 "line": 2,
                 "column": 13
               },
-              "source": "rule.css"
+              "source": "ms-lang.css"
             }
           }
         ],
@@ -34,7 +34,7 @@
             "line": 3,
             "column": 2
           },
-          "source": "rule.css"
+          "source": "ms-lang.css"
         }
       }
     ]
