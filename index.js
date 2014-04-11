@@ -191,7 +191,7 @@ module.exports = function(css, options){
     if (!m) return;
     /* @fix Remove all comments from selectors
      * http://ostermiller.org/findcomment.html */
-    return trim(m[0]).replace(/\/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*\/+/g, '').split(/\s*,\s*/);
+    return trim(m[0]).replace(/\/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*\/+/g, '').split(/\s*(?![^(]*\)),\s*/);
   }
 
   /**
