@@ -60,4 +60,11 @@ describe('parse(str)', function(){
       parse('/* /* */');
     });
   })
+
+  it('should allow empty property value', function() {
+    assert.doesNotThrow(function() {
+      parse('p { color:; }');
+    });
+  });
+
 })
