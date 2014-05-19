@@ -1,6 +1,7 @@
-2.0.0 / 2014-01-24
+HEAD
 ==================
 
+ * allow empty property values
  * changed default `options.position` value to `true`
  * remove comments from properties and values
  * asserts when selectors are missing
