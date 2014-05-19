@@ -219,12 +219,11 @@ module.exports = function(css, options){
 
     // val
     var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)/);
-    if (!val) return error('property missing value');
 
     var ret = pos({
       type: 'declaration',
       property: prop.replace(commentre, ''),
-      value: trim(val[0]).replace(commentre, '')
+      value: val ? trim(val[0]).replace(commentre, '') : ''
     });
 
     // ;
