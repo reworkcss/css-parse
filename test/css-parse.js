@@ -20,7 +20,7 @@ describe('parse(str)', function(){
       var ret = parse(css, { source: file + '.css' });
       ret = JSON.stringify(ret, null, 2);
       ret.should.equal(json);
-    })
+    });
   });
 
   it('should save the filename and source', function(){
@@ -29,7 +29,7 @@ describe('parse(str)', function(){
       source: 'booty.css'
     });
 
-    var position = ast.stylesheet.rules[0].position
+    var position = ast.stylesheet.rules[0].position;
     position.start.should.be.ok;
     position.end.should.be.ok;
     position.source.should.equal('booty.css');
@@ -44,7 +44,7 @@ describe('parse(str)', function(){
     assert.throws(function(){
       parse('b { color: red; }\n{ color: green; }\na {color: blue; }');
     });
-  })
+  });
 
   it('should throw when a broken comment is found', function () {
     assert.throws(function(){
@@ -59,5 +59,11 @@ describe('parse(str)', function(){
     assert.doesNotThrow(function(){
       parse('/* /* */');
     });
-  })
-})
+  });
+
+  it('should allow empty property value', function() {
+    assert.doesNotThrow(function() {
+      parse('p { color:; }');
+    });
+  });
+});
