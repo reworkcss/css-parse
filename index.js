@@ -384,23 +384,19 @@ module.exports = function(css, options){
 
 
   /**
-  * Parse custom-media.
-  */
+   * Parse custom-media.
+   */
 
   function atcustommedia() {
     var pos = position();
     var m = match(/^@([-\w]+)?custom-media (--[^\s]+) *([^{]+);/);
     if (!m) return;
 
-    var vendor = trim(m[1]);
-    var name = trim(m[2]);
-    var list = trim(m[3]);
-
     return pos({
       type: 'custom-media',
-      vendor: vendor,
-      name: name,
-      media: list
+      vendor: trim(m[1]),
+      name: trim(m[2]),
+      media: trim(m[3])
     });
   }
 
