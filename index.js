@@ -382,6 +382,28 @@ module.exports = function(css, options){
     });
   }
 
+
+  /**
+  * Parse custom-media.
+  */
+
+  function atcustommedia() {
+    var pos = position();
+    var m = match(/^@([-\w]+)?custom-media (--[^\s]+) *([^{]+);/);
+    if (!m) return;
+
+    var vendor = trim(m[1]);
+    var name = trim(m[2]);
+    var list = trim(m[3]);
+
+    return pos({
+      type: 'custom-media',
+      vendor: vendor,
+      name: name,
+      media: list
+    });
+  }
+
   /**
    * Parse paged media.
    */
@@ -509,6 +531,7 @@ module.exports = function(css, options){
 
     return atkeyframes()
       || atmedia()
+      || atcustommedia()
       || atsupports()
       || atimport()
       || atcharset()
