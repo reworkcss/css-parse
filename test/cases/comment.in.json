@@ -39,6 +39,38 @@
               },
               "source": "comment.in.css"
             }
+          },
+          {
+            "type": "declaration",
+            "property": "border",
+            "value": "solid",
+            "position": {
+              "start": {
+                "line": 4,
+                "column": 5
+              },
+              "end": {
+                "line": 4,
+                "column": 24
+              },
+              "source": "comment.in.css"
+            }
+          },
+          {
+            "type": "declaration",
+            "property": "border-top",
+            "value": "none\\9",
+            "position": {
+              "start": {
+                "line": 4,
+                "column": 26
+              },
+              "end": {
+                "line": 4,
+                "column": 50
+              },
+              "source": "comment.in.css"
+            }
           }
         ],
         "position": {
@@ -47,7 +79,7 @@
             "column": 1
           },
           "end": {
-            "line": 4,
+            "line": 5,
             "column": 2
           },
           "source": "comment.in.css"
