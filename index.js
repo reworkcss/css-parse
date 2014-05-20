@@ -389,14 +389,13 @@ module.exports = function(css, options){
 
   function atcustommedia() {
     var pos = position();
-    var m = match(/^@([-\w]+)?custom-media (--[^\s]+) *([^{]+);/);
+    var m = match(/^@custom-media (--[^\s]+) *([^{]+);/);
     if (!m) return;
 
     return pos({
       type: 'custom-media',
-      vendor: trim(m[1]),
-      name: trim(m[2]),
-      media: trim(m[3])
+      name: trim(m[1]),
+      media: trim(m[2])
     });
   }
 

@@ -4,7 +4,6 @@
     "rules": [
       {
         "type": "custom-media",
-        "vendor": "",
         "name": "--narrow-window",
         "media": "(max-width: 30em)",
         "position": {
