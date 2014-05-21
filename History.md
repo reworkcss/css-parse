@@ -1,6 +1,7 @@
 HEAD
 ==================
 
+ * allow commas inside selector functions
  * allow empty property values
  * changed default `options.position` value to `true`
  * remove comments from properties and values

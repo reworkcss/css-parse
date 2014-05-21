@@ -196,7 +196,7 @@ module.exports = function(css, options){
       .replace(/(?:"[^"]*"|'[^']*')/g, function(m) {
         return m.replace(/,/g, '\u200C');
       })
-      .split(/\s*,\s*/)
+      .split(/\s*(?![^(]*\)),\s*/)
       .map(function(s) {
         return s.replace(/\u200C/g, ',');
       });

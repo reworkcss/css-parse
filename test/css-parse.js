@@ -18,6 +18,9 @@ describe('parse(str)', function(){
       var css = read(path.join('test', 'cases', file + '.css'), 'utf8');
       var json = read(path.join('test', 'cases', file + '.json'), 'utf8');
       var ret = parse(css, { source: file + '.css' });
+      // normalize line endings from input file
+      json = JSON.parse(json);
+      json = JSON.stringify(json, null, 2);
       ret = JSON.stringify(ret, null, 2);
       ret.should.equal(json);
     });
