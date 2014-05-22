@@ -155,7 +155,11 @@ module.exports = function(css, options){
   function comments(rules) {
     var c;
     rules = rules || [];
-    while (c = comment()) rules.push(c);
+    while (c = comment()){
+      if (c !== false) {
+        rules.push(c);
+      }
+    } 
     return rules;
   }
 
@@ -253,7 +257,7 @@ module.exports = function(css, options){
       if(decl !== false){
         decls.push(decl);
         comments(decls);
-	  }
+	    }
     }
 
     if (!close()) return error("missing '}'");
