@@ -29,28 +29,31 @@ module.exports = function(css, options){
    */
 
   function position() {
-    if (!options.position) return positionNoop;
-
     var start = { line: lineno, column: column };
+    if (!options.position) return positionNoop;
 
     return function(node){
       node.position = new Position(start);
       whitespace();
       return node;
-    }
+    };
   }
+
+  /**
+   * Store position information for a node
+   */
 
   function Position(start) {
     this.start = start;
     this.end = { line: lineno, column: column };
-    this.filename = options.filename;
+    this.source = options.source;
   }
 
   /**
-   * Non-enumerable source string.
+   * Non-enumerable source string
    */
 
-  Position.prototype.source = css;
+  Position.prototype.content = css;
 
   /**
    * Return `node`.
@@ -65,13 +68,17 @@ module.exports = function(css, options){
    * Error `msg`.
    */
 
-  function error(msg, start) {
-    if(options.silent === true){
-      return false;
-    }
+  function error(msg) {
     var err = new Error(msg + ' near line ' + lineno + ':' + column);
-    err.position = new Position(start);
-    throw err;
+    err.filename = options.source;
+    err.line = lineno;
+    err.column = column;
+    err.source = css;
+    if(options.silent === true){
+      return err;
+    } else {
+	  throw err;
+	}
   }
 
   /**
@@ -117,7 +124,7 @@ module.exports = function(css, options){
         rules.push(node);
         comments(rules);
       }
-     }
+    }
     return rules;
   }
 
@@ -162,8 +169,12 @@ module.exports = function(css, options){
     if ('/' != css.charAt(0) || '*' != css.charAt(1)) return;
 
     var i = 2;
-    while (null != css.charAt(i) && ('*' != css.charAt(i) || '/' != css.charAt(i + 1))) ++i;
+    while ("" != css.charAt(i) && ('*' != css.charAt(i) || '/' != css.charAt(i + 1))) ++i;
     i += 2;
+
+    if ("" === css.charAt(i-1)) {
+      return error('End of comment missing');
+    }
 
     var str = css.slice(2, i - 2);
     column += 2;
@@ -186,7 +197,15 @@ module.exports = function(css, options){
     if (!m) return;
     /* @fix Remove all comments from selectors
      * http://ostermiller.org/findcomment.html */
-    return trim(m[0]).replace(/\/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*\/+/g, '').split(/\s*,\s*/);
+    return trim(m[0])
+      .replace(/\/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*\/+/g, '')
+      .replace(/(?:"[^"]*"|'[^']*')/g, function(m) {
+        return m.replace(/,/g, '\u200C');
+      })
+      .split(/\s*,\s*/)
+      .map(function(s) {
+        return s.replace(/\u200C/g, ',');
+      });
   }
 
   /**
@@ -197,7 +216,7 @@ module.exports = function(css, options){
     var pos = position();
 
     // prop
-    var prop = match(/^(\*?[-#\/\*\w]+(\[[0-9a-z_-]+\])?)\s*/);
+    var prop = match(/^(\*?[-#\/\*\\\w]+(\[[0-9a-z_-]+\])?)\s*/);
     if (!prop) return;
     prop = trim(prop[0]);
 
@@ -206,12 +225,11 @@ module.exports = function(css, options){
 
     // val
     var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)/);
-    if (!val) return error('property missing value');
 
     var ret = pos({
       type: 'declaration',
       property: prop.replace(commentre, ''),
-      value: trim(val[0]).replace(commentre, '')
+      value: val ? trim(val[0]).replace(commentre, '') : ''
     });
 
     // ;
@@ -234,9 +252,9 @@ module.exports = function(css, options){
     var decl;
     while (decl = declaration()) {
       if(decl !== false){
-      decls.push(decl);
-      comments(decls);
-    }
+        decls.push(decl);
+        comments(decls);
+	  }
     }
 
     if (!close()) return error("missing '}'");
@@ -388,10 +406,8 @@ module.exports = function(css, options){
     // declarations
     var decl;
     while (decl = declaration()) {
-      if(decl !== false){
-        decls.push(decl);
-        decls = decls.concat(comments());
-      }
+      decls.push(decl);
+      decls = decls.concat(comments());
     }
 
     if (!close()) return error("@page missing '}'");
@@ -430,40 +446,65 @@ module.exports = function(css, options){
   }
 
   /**
+   * Parse font-face.
+   */
+
+  function atfontface() {
+    var pos = position();
+    var m = match(/^@font-face */);
+    if (!m) return;
+
+    if (!open()) return error("@font-face missing '{'");
+    var decls = comments();
+
+    // declarations
+    var decl;
+    while (decl = declaration()) {
+      decls.push(decl);
+      decls = decls.concat(comments());
+    }
+
+    if (!close()) return error("@font-face missing '}'");
+
+    return pos({
+      type: 'font-face',
+      declarations: decls
+    });
+  }
+
+  /**
    * Parse import
    */
 
-  function atimport() {
-    return _atrule('import');
-  }
+  var atimport = _compileAtrule('import');
 
   /**
    * Parse charset
    */
 
-  function atcharset() {
-    return _atrule('charset');
-  }
+  var atcharset = _compileAtrule('charset');
 
   /**
    * Parse namespace
    */
 
-  function atnamespace() {
-    return _atrule('namespace')
-  }
+  var atnamespace = _compileAtrule('namespace');
 
   /**
    * Parse non-block at-rules
    */
 
-  function _atrule(name) {
-    var pos = position();
-    var m = match(new RegExp('^@' + name + ' *([^;\\n]+);'));
-    if (!m) return;
-    var ret = { type: name };
-    ret[name] = trim(m[1]);
-    return pos(ret);
+
+  function _compileAtrule(name) {
+    var re = new RegExp('^@' + name + ' *([^;\\n]+);');
+    return function() {
+      var pos = position();
+      var m = match(re);
+      if (!m) return;
+      var ret = { type: name };
+      ret[name] = m[1].trim();
+      return pos(ret);
+    }
   }
 
   /**
@@ -481,7 +522,8 @@ module.exports = function(css, options){
       || atnamespace()
       || atdocument()
       || atpage()
-      || athost();
+      || athost()
+      || atfontface();
   }
 
   /**
