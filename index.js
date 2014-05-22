@@ -69,6 +69,9 @@ module.exports = function(css, options){
    */
 
   function error(msg) {
+    if(options.silent === true){
+      return false;
+    }
     var err = new Error(msg + ' near line ' + lineno + ':' + column);
     err.filename = options.source;
     err.line = lineno;
