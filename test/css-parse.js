@@ -66,4 +66,11 @@ describe('parse(str)', function(){
       parse('p { color:; }');
     });
   });
+
+  it('should not throw with silent option', function () {
+    assert.doesNotThrow(function(){
+      parse('thing { color: red; } /* b { color: blue; }',{ silent: true });
+    });
+  });
+
 });

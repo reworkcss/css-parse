@@ -30,6 +30,7 @@ console.log(JSON.stringify(output_obj, null, 2));
 
 `options`:
 
+- `silent` - silently fail on parse errrors.
 - `source` - recommended for debugging.
 - `position` - `true` by default.
 
@@ -153,9 +154,9 @@ also pass in `source: 'path/to/original.css'`, that will be set on
   Parsed 15,000 lines of CSS (2mb) in 40ms on my macbook air.
 
 ## Related
- 
-  [css-stringify](https://github.com/visionmedia/css-stringify "CSS-Stringify")  
-  [css-value](https://github.com/visionmedia/css-value "CSS-Value")  
+
+  [css-stringify](https://github.com/visionmedia/css-stringify "CSS-Stringify")
+  [css-value](https://github.com/visionmedia/css-value "CSS-Value")
 
 ## License
 
