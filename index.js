@@ -69,9 +69,10 @@ module.exports = function(css, options){
    */
 
   function error(msg) {
-    if(options.silent === true){
+    if (options.silent === true) {
       return false;
     }
+    
     var err = new Error(msg + ' near line ' + lineno + ':' + column);
     err.filename = options.source;
     err.line = lineno;
@@ -119,7 +120,7 @@ module.exports = function(css, options){
     whitespace();
     comments(rules);
     while (css.length && css.charAt(0) != '}' && (node = atrule() || rule())) {
-      if(node !== false){
+      if (node !== false) {
         rules.push(node);
         comments(rules);
       }
@@ -155,7 +156,7 @@ module.exports = function(css, options){
   function comments(rules) {
     var c;
     rules = rules || [];
-    while (c = comment()){
+    while (c = comment()) {
       if (c !== false) {
         rules.push(c);
       }
@@ -254,10 +255,10 @@ module.exports = function(css, options){
     // declarations
     var decl;
     while (decl = declaration()) {
-      if(decl !== false){
+      if (decl !== false) {
         decls.push(decl);
         comments(decls);
-	    }
+      }
     }
 
     if (!close()) return error("missing '}'");
