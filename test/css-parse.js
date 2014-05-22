@@ -71,11 +71,6 @@ describe('parse(str)', function(){
     assert.doesNotThrow(function(){
       parse('thing { color: red; } /* b { color: blue; }',{ silent: true });
     });
-
-    /* Nested comments should be fine */
-    assert.doesNotThrow(function(){
-      parse('/* /* */');
-    });
   });
 
 
