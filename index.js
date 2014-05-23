@@ -72,7 +72,7 @@ module.exports = function(css, options){
     if (options.silent === true) {
       return false;
     }
-    
+
     var err = new Error(msg + ' near line ' + lineno + ':' + column);
     err.filename = options.source;
     err.line = lineno;
@@ -160,7 +160,7 @@ module.exports = function(css, options){
       if (c !== false) {
         rules.push(c);
       }
-    } 
+    }
     return rules;
   }
 
@@ -400,7 +400,7 @@ module.exports = function(css, options){
 
   function atcustommedia() {
     var pos = position();
-    var m = match(/^@custom-media (--[^\s]+) *([^{]+);/);
+    var m = match(/^@custom-media (--[^\s]+) *([^{;]+);/);
     if (!m) return;
 
     return pos({

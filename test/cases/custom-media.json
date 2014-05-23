@@ -17,6 +17,22 @@
           },
           "source": "custom-media.css"
         }
+      },
+      {
+        "type": "custom-media",
+        "name": "--wide-window",
+        "media": "screen and (min-width: 40em)",
+        "position": {
+          "start": {
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "line": 2,
+            "column": 58
+          },
+          "source": "custom-media.css"
+        }
       }
     ]
   }
