@@ -381,6 +381,23 @@ module.exports = function(css, options){
     });
   }
 
+
+  /**
+   * Parse custom-media.
+   */
+
+  function atcustommedia() {
+    var pos = position();
+    var m = match(/^@custom-media (--[^\s]+) *([^{]+);/);
+    if (!m) return;
+
+    return pos({
+      type: 'custom-media',
+      name: trim(m[1]),
+      media: trim(m[2])
+    });
+  }
+
   /**
    * Parse paged media.
    */
@@ -508,6 +525,7 @@ module.exports = function(css, options){
 
     return atkeyframes()
       || atmedia()
+      || atcustommedia()
       || atsupports()
       || atimport()
       || atcharset()
