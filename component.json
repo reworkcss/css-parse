@@ -1,8 +1,0 @@
-{
-  "name": "css-parse",
-  "repo": "reworkcss/css-parse",
-  "version": "1.7.0",
-  "description": "CSS parser",
-  "keywords": ["css", "parser", "stylesheet"],
-  "scripts": ["index.js"]
-}
