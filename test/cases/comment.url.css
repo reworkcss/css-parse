@@ -1,7 +1,0 @@
-/* http://foo.com/bar/baz.html */
-/**/
-
-foo { /*/*/
-  /* something */
-  bar: baz; /* http://foo.com/bar/baz.html */
-}

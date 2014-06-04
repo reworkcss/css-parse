@@ -1,13 +1,7 @@
 HEAD
 ==================
 
- * add support for `@custom-media`
- * allow commas inside selector functions
- * allow empty property values
- * changed default `options.position` value to `true`
- * remove comments from properties and values
- * asserts when selectors are missing
- * added `node.position.content` property
+ * depend on the 'css' package, which now contains the parser
 
 1.7.0 / 2013-12-21
 ==================

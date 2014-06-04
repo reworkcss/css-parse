@@ -2,27 +2,22 @@
   "name": "css-parse",
   "version": "1.7.0",
   "description": "CSS parser",
-  "keywords": [
-    "css",
-    "parser",
-    "stylesheet"
+  "main": "index",
+  "files": [
+    "index.js"
   ],
+  "dependencies": {
+    "css": "^1.6.0"
+  },
   "author": "TJ Holowaychuk <tj@vision-media.ca>",
   "license": "MIT",
-  "devDependencies": {
-    "mocha": "*",
-    "should": "*",
-    "matcha": "~0.4.0",
-    "bytes": "~0.2.1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/reworkcss/css-parse.git"
   },
-  "scripts": {
-    "test": "make test"
-  },
-  "files": [
-    "index.js"
+  "keywords": [
+    "css",
+    "parser",
+    "stylesheet"
   ]
 }
