@@ -1,6 +1,7 @@
 HEAD
 ==================
 
+ * update 'css' to 2.0.0
  * depend on the 'css' package, which now contains the parser
 
 1.7.0 / 2013-12-21

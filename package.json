@@ -7,7 +7,7 @@
     "index.js"
   ],
   "dependencies": {
-    "css": "^1.6.0"
+    "css": "^2.0.0"
   },
   "author": "TJ Holowaychuk <tj@vision-media.ca>",
   "license": "MIT",
